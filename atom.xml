@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>YouTaoBlog</title>
   
-  
+  <subtitle>Welcome To My Blog!</subtitle>
   <link href="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/atom.xml" rel="self"/>
   
   <link href="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/"/>
@@ -10,7 +10,7 @@
   <id>https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>YouTao</name>
     
   </author>
   
