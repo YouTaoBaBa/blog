@@ -6,7 +6,7 @@
   <link href="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/atom.xml" rel="self"/>
   
   <link href="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/"/>
-  <updated>2020-09-10T08:59:05.317Z</updated>
+  <updated>2020-09-10T12:04:46.222Z</updated>
   <id>https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>从零开始搭建Hexo博客</title>
+    <link href="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/cong-ling-kai-shi-da-jian-hexo-bo-ke/"/>
+    <id>https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/cong-ling-kai-shi-da-jian-hexo-bo-ke/</id>
+    <published>2020-09-10T08:53:54.000Z</published>
+    <updated>2020-09-10T12:04:46.222Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;   准备工作:安装nodejs, 安装git, 配置github的SSH&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;安装nodejs&quot;&gt;&lt;a href=&quot;#安装nodejs&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="blog相关" scheme="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/blog%E7%9B%B8%E5%85%B3/"/>
+    
+    
+    <category term="blog配置" scheme="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/blog%E9%85%8D%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Markdown基本语法</title>
     <link href="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/markdown-ji-ben-yu-fa/"/>
     <id>https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/markdown-ji-ben-yu-fa/</id>
     <published>2020-09-10T08:41:52.000Z</published>
-    <updated>2020-09-10T08:59:05.317Z</updated>
+    <updated>2020-09-10T12:08:28.385Z</updated>
     
     
       
@@ -34,15 +62,19 @@
     
     
     
+    <category term="blog相关" scheme="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/blog%E7%9B%B8%E5%85%B3/"/>
+    
+    
+    <category term="blog书写" scheme="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/blog%E4%B9%A6%E5%86%99/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/09/hello-world/"/>
-    <id>https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/09/hello-world/</id>
-    <published>2020-09-09T13:37:03.302Z</published>
-    <updated>2020-09-09T13:37:03.302Z</updated>
+    <link href="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/hello-world/"/>
+    <id>https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/hello-world/</id>
+    <published>2020-09-10T08:41:52.000Z</published>
+    <updated>2020-09-10T12:09:39.893Z</updated>
     
     
       
@@ -55,6 +87,10 @@
     
     
     
+    <category term="blog相关" scheme="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/blog%E7%9B%B8%E5%85%B3/"/>
+    
+    
+    <category term="第一次配置完成Hexo" scheme="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%88%90Hexo/"/>
     
   </entry>
   
