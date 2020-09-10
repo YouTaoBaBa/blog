@@ -3,11 +3,11 @@
   <title>YouTaoBlog</title>
   
   <subtitle>Welcome To My Blog!</subtitle>
-  <link href="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/atom.xml" rel="self"/>
+  <link href="http://example.com/atom.xml" rel="self"/>
   
-  <link href="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/"/>
+  <link href="http://example.com/"/>
   <updated>2020-09-10T12:04:46.222Z</updated>
-  <id>https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/</id>
+  <id>http://example.com/</id>
   
   <author>
     <name>YouTao</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>从零开始搭建Hexo博客</title>
-    <link href="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/cong-ling-kai-shi-da-jian-hexo-bo-ke/"/>
-    <id>https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/cong-ling-kai-shi-da-jian-hexo-bo-ke/</id>
+    <link href="http://example.com/2020/09/10/cong-ling-kai-shi-da-jian-hexo-bo-ke/"/>
+    <id>http://example.com/2020/09/10/cong-ling-kai-shi-da-jian-hexo-bo-ke/</id>
     <published>2020-09-10T08:53:54.000Z</published>
     <updated>2020-09-10T12:04:46.222Z</updated>
     
@@ -37,19 +37,19 @@
     
     
     
-    <category term="blog相关" scheme="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/blog%E7%9B%B8%E5%85%B3/"/>
+    <category term="blog相关" scheme="http://example.com/categories/blog%E7%9B%B8%E5%85%B3/"/>
     
     
-    <category term="blog配置" scheme="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/blog%E9%85%8D%E7%BD%AE/"/>
+    <category term="blog配置" scheme="http://example.com/tags/blog%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   
   <entry>
     <title>Markdown基本语法</title>
-    <link href="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/markdown-ji-ben-yu-fa/"/>
-    <id>https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/markdown-ji-ben-yu-fa/</id>
+    <link href="http://example.com/2020/09/10/markdown-ji-ben-yu-fa/"/>
+    <id>http://example.com/2020/09/10/markdown-ji-ben-yu-fa/</id>
     <published>2020-09-10T08:41:52.000Z</published>
-    <updated>2020-09-10T12:08:28.385Z</updated>
+    <updated>2020-09-10T13:57:56.016Z</updated>
     
     
       
@@ -62,19 +62,19 @@
     
     
     
-    <category term="blog相关" scheme="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/blog%E7%9B%B8%E5%85%B3/"/>
+    <category term="blog相关" scheme="http://example.com/categories/blog%E7%9B%B8%E5%85%B3/"/>
     
     
-    <category term="blog书写" scheme="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/blog%E4%B9%A6%E5%86%99/"/>
+    <category term="blog书写" scheme="http://example.com/tags/blog%E4%B9%A6%E5%86%99/"/>
     
   </entry>
   
   <entry>
     <title>Hello World</title>
-    <link href="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/hello-world/"/>
-    <id>https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/hello-world/</id>
+    <link href="http://example.com/2020/09/10/hello-world/"/>
+    <id>http://example.com/2020/09/10/hello-world/</id>
     <published>2020-09-10T08:41:52.000Z</published>
-    <updated>2020-09-10T12:09:39.893Z</updated>
+    <updated>2020-09-10T13:57:53.984Z</updated>
     
     
       
@@ -87,10 +87,10 @@
     
     
     
-    <category term="blog相关" scheme="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/blog%E7%9B%B8%E5%85%B3/"/>
+    <category term="blog相关" scheme="http://example.com/categories/blog%E7%9B%B8%E5%85%B3/"/>
     
     
-    <category term="第一次配置完成Hexo" scheme="https://coding-pages-bucket-3473233-7944306-265-306360-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%88%90Hexo/"/>
+    <category term="第一次配置完成Hexo" scheme="http://example.com/tags/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%88%90Hexo/"/>
     
   </entry>
   
