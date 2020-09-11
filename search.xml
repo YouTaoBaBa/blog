@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>git使用</title>
+      <link href="/2020/09/11/git-shi-yong/"/>
+      <url>/2020/09/11/git-shi-yong/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Git基本使用"><a href="#Git基本使用" class="headerlink" title="Git基本使用"></a>Git基本使用</h1><h2 id="必要配置"><a href="#必要配置" class="headerlink" title="必要配置"></a>必要配置</h2><p>###查看当前项目下的配置</p><pre class=" language-git"><code class="language-git">git config -l  #查看所有配置git config --system -l #查看系统配置git config --global --list #查看用户配置</code></pre><h3 id="配置用户变量"><a href="#配置用户变量" class="headerlink" title="配置用户变量"></a>配置用户变量</h3><pre class=" language-git"><code class="language-git">git config --global user.name <span class="token string">"YouTaoBaBa"</span> #配置用户名git config --global user.email 674508620@qq.com #配置用户邮箱</code></pre><h2 id="配置公钥"><a href="#配置公钥" class="headerlink" title="配置公钥"></a>配置公钥</h2><p>用户目录下找.ssh文件夹里找-d_rsa.pub，如果没有，则使用以下命令生成公钥，然后将公钥复制到远程仓库管理(github,gitee,coding等)的ssh配置里</p><pre class=" language-git"><code class="language-git">ssh-keygen -t rsa</code></pre><h2 id="git基本操作"><a href="#git基本操作" class="headerlink" title="git基本操作"></a>git基本操作</h2><h3 id="本地仓库搭建"><a href="#本地仓库搭建" class="headerlink" title="本地仓库搭建"></a>本地仓库搭建</h3><pre class=" language-git"><code class="language-git">git init #本地初始化git clone [url](https或者ssh) #复制远程仓库</code></pre><h3 id="添加到暂存区"><a href="#添加到暂存区" class="headerlink" title="添加到暂存区"></a>添加到暂存区</h3><pre class=" language-git"><code class="language-git">git add . #添加所有文件到暂存区</code></pre><h3 id="查看文件状态"><a href="#查看文件状态" class="headerlink" title="查看文件状态"></a>查看文件状态</h3><pre class=" language-git"><code class="language-git">git status</code></pre><h3 id="提交暂存区至本地仓库"><a href="#提交暂存区至本地仓库" class="headerlink" title="提交暂存区至本地仓库"></a>提交暂存区至本地仓库</h3><pre class=" language-git"><code class="language-git">git commit -m <span class="token string">"filename"</span></code></pre><h3 id="提交至远程仓库"><a href="#提交至远程仓库" class="headerlink" title="提交至远程仓库"></a>提交至远程仓库</h3><pre class=" language-git"><code class="language-git">git push (origin master)</code></pre><h3 id="同步远程仓库至本地仓库"><a href="#同步远程仓库至本地仓库" class="headerlink" title="同步远程仓库至本地仓库"></a>同步远程仓库至本地仓库</h3><pre><code>git pull</code></pre><h3 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h3><p>在主目录下建立 “.gitignore”文件，文件规则如下：</p><ol><li>忽略文件中的空行和井号开始的行会被忽略</li><li>可以使用linux通配符</li><li>名称最前面有!表示例外规则，不被忽略</li><li>名称前面德文路径分隔符(‘/‘)表示要忽略的文件在此目录下，而子目录的文件不忽略</li><li>如果名称的最后一个是路径分隔符(‘/‘)表示忽略的是此目录下该名称的子目录，而非文件(默认文件或目录都忽略)。</li></ol><h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>查看所有分支</p><pre class=" language-git"><code class="language-git">git branchgit branch -r #查看远程分支</code></pre><p>新建分支dev</p><pre class=" language-git"><code class="language-git">git branch devgit checkout -b dev #新建一个分支并切换到这个分支</code></pre><p>切换分支</p><pre class=" language-git"><code class="language-git">git checkout master</code></pre><p>删除分支dev</p><pre class=" language-git"><code class="language-git">git branch -d dev</code></pre><p>合并指定分支到当前分支</p><pre class=" language-git"><code class="language-git">git merge [branch]</code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> git </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> git使用 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>从零开始搭建Hexo博客</title>
       <link href="/2020/09/10/cong-ling-kai-shi-da-jian-hexo-bo-ke/"/>
       <url>/2020/09/10/cong-ling-kai-shi-da-jian-hexo-bo-ke/</url>
