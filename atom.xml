@@ -6,7 +6,7 @@
   <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/atom.xml" rel="self"/>
   
   <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/"/>
-  <updated>2020-09-12T11:01:53.386Z</updated>
+  <updated>2020-09-12T14:10:54.054Z</updated>
   <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>java多线程</title>
+    <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/12/java-duo-xian-cheng/"/>
+    <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/12/java-duo-xian-cheng/</id>
+    <published>2020-09-12T11:55:06.000Z</published>
+    <updated>2020-09-12T14:10:54.054Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;java多线程&quot;&gt;&lt;a href=&quot;#java多线程&quot; class=&quot;headerlink&quot; title=&quot;java多线程&quot;&gt;&lt;/a&gt;java多线程&lt;/h1&gt;&lt;h2 id=&quot;创建线程的方式&quot;&gt;&lt;a href=&quot;#创建线程的方式&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/java/"/>
+    
+    
+    <category term="java多线程及lambda表达式" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%8F%8Alambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>java常用类</title>
