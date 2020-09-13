@@ -463,18 +463,13 @@ thread<span class="token punctuation">.</span><span class="token function">setPr
 <h2 id="线程同步"><a href="#线程同步" class="headerlink" title="线程同步"></a>线程同步</h2><p>并发：多线程操作同一个资源</p>
 <h3 id="引入锁机制synchronized"><a href="#引入锁机制synchronized" class="headerlink" title="引入锁机制synchronized"></a>引入锁机制synchronized</h3><p>问题：</p>
 <ul>
-<li><p>线程持有锁会导致其他所有需要此锁的线程挂起；</p>
-</li>
-<li><p>多线程竞争下，加锁，释放锁会导致较多的上下文切换和调度延时，引起性能问题；</p>
-</li>
-<li><p>如果一个优先级高的线程等待一个优先级低的线程释放锁，会导致优先级倒置，引起性能问题。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> pynchronized <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//同步方法，默认锁this</span>
+<li>线程持有锁会导致其他所有需要此锁的线程挂起；</li>
+<li>多线程竞争下，加锁，释放锁会导致较多的上下文切换和调度延时，引起性能问题；</li>
+<li>如果一个优先级高的线程等待一个优先级低的线程释放锁，会导致优先级倒置，引起性能问题。<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> pynchronized <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//同步方法，默认锁this</span>
 <span class="token keyword">synchronized</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">//同步代码块，所得对象就是变化的量，需要增删改查的。</span>
 <span class="token punctuation">}</span></code></pre>
-<h3 id="Lock接口"><a href="#Lock接口" class="headerlink" title="Lock接口"></a>Lock接口</h3><p>java.util,concurrent.locks.Lock接口是控制多个线程对共享资源访问的工具。</p>
-<h4 id="ReentrantLock类-可重入锁"><a href="#ReentrantLock类-可重入锁" class="headerlink" title="ReentrantLock类 可重入锁"></a>ReentrantLock类 可重入锁</h4><p>该类实现了Lock，拥有和synchronized相同的并发性和内存语义，在实现线程安全的控制中，比较常用，可显式加锁释放锁。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">TestLock2</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">{</span>
+<h3 id="Lock接口"><a href="#Lock接口" class="headerlink" title="Lock接口"></a>Lock接口</h3>java.util,concurrent.locks.Lock接口是控制多个线程对共享资源访问的工具。<h4 id="ReentrantLock类-可重入锁"><a href="#ReentrantLock类-可重入锁" class="headerlink" title="ReentrantLock类 可重入锁"></a>ReentrantLock类 可重入锁</h4>该类实现了Lock，拥有和synchronized相同的并发性和内存语义，在实现线程安全的控制中，比较常用，可显式加锁释放锁。<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">TestLock2</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">{</span>
   <span class="token keyword">int</span> ticketNums <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
   <span class="token keyword">private</span> <span class="token keyword">final</span> ReentrantLock lock <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ReentrantLock</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token annotation punctuation">@Override</span>
@@ -497,10 +492,8 @@ thread<span class="token punctuation">.</span><span class="token function">setPr
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <h2 id="线程协作"><a href="#线程协作" class="headerlink" title="线程协作"></a>线程协作</h2><h3 id="生产者消费者问题-可以参考操作系统"><a href="#生产者消费者问题-可以参考操作系统" class="headerlink" title="生产者消费者问题(可以参考操作系统)"></a>生产者消费者问题(可以参考操作系统)</h3></li>
-<li><p>管程法</p>
-</li>
-<li><p>信号灯法</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">{</span>
+<li>管程法</li>
+<li>信号灯法<pre class=" language-java"><code class="language-java"><span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">//执行操作</span>
@@ -512,91 +505,67 @@ thread<span class="token punctuation">.</span><span class="token function">setPr
       <span class="token keyword">new</span> <span class="token class-name">Consumer</span><span class="token punctuation">(</span>container<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-<span class="token keyword">class</span> <span class="token class-name">Productor</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span><span class="token punctuation">{</span>
-  SynContainer container<span class="token punctuation">;</span>
-  <span class="token keyword">public</span> <span class="token function">Productor</span><span class="token punctuation">(</span>SynContainer container<span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token keyword">this</span><span class="token punctuation">.</span>container <span class="token operator">=</span> container<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          container<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Product</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"生产了"</span><span class="token operator">+</span>i<span class="token operator">+</span><span class="token string">"只鸡"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">class</span> <span class="token class-name">Consumer</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span><span class="token punctuation">{</span>
-  SynContainer container<span class="token punctuation">;</span>
-  <span class="token keyword">public</span> <span class="token function">Consumer</span><span class="token punctuation">(</span>SynContainer container<span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token keyword">this</span><span class="token punctuation">.</span>container <span class="token operator">=</span> container<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-
-  <span class="token annotation punctuation">@Override</span>
-  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-          System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"消费了第"</span><span class="token operator">+</span>container<span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>id<span class="token operator">+</span><span class="token string">"只鸡"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">class</span> <span class="token class-name">Product</span><span class="token punctuation">{</span>
-  <span class="token keyword">int</span> id<span class="token punctuation">;</span>
-
-  <span class="token keyword">public</span> <span class="token function">Product</span><span class="token punctuation">(</span><span class="token keyword">int</span> id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">this</span><span class="token punctuation">.</span>id <span class="token operator">=</span> id<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">class</span> <span class="token class-name">SynContainer</span><span class="token punctuation">{</span>
-  Product<span class="token punctuation">[</span><span class="token punctuation">]</span> products <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Product</span><span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-  <span class="token keyword">int</span> count <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-  <span class="token keyword">public</span> <span class="token keyword">synchronized</span> <span class="token keyword">void</span> <span class="token function">push</span><span class="token punctuation">(</span>Product product<span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token keyword">if</span><span class="token punctuation">(</span>count<span class="token operator">==</span>products<span class="token punctuation">.</span>length<span class="token punctuation">)</span><span class="token punctuation">{</span>
-          <span class="token keyword">try</span> <span class="token punctuation">{</span>
-              <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-              e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span>
-
-      products<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token operator">=</span>product<span class="token punctuation">;</span>
-      count<span class="token operator">++</span><span class="token punctuation">;</span>
-      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">notifyAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-  <span class="token keyword">public</span> <span class="token keyword">synchronized</span> Product <span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-      <span class="token keyword">if</span><span class="token punctuation">(</span>count<span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-          <span class="token keyword">try</span> <span class="token punctuation">{</span>
-              <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">wait</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">InterruptedException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-              e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-          <span class="token punctuation">}</span>
-      <span class="token punctuation">}</span>
-      count<span class="token operator">--</span><span class="token punctuation">;</span>
-      Product product <span class="token operator">=</span> products<span class="token punctuation">[</span>count<span class="token punctuation">]</span><span class="token punctuation">;</span>
-      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">notifyAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token keyword">return</span> product<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><p>背景：经常创建和销毁、使用量特别大的资源，比如并发下的线程，对性能影响很大。<br>思路：提前创建多线程，放入线程池，使用时直接获取，使用完放回池中。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestPool</span> <span class="token punctuation">{</span>
-  <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token comment" spellcheck="true">//创建服务，创建线程池,参数为线程池大小</span>
-      ExecutorService service <span class="token operator">=</span> Executors<span class="token punctuation">.</span><span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token comment" spellcheck="true">//执行</span>
-      service<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      service<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      service<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      service<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token comment" spellcheck="true">//关闭链接</span>
-      service<span class="token punctuation">.</span><span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-<span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">{</span>
-  <span class="token annotation punctuation">@Override</span>
-  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
-<h2 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h2><h3 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h3><p>任何一个接口，如果只包含唯一一个抽象方法，那么他就是一个函数式接口，我们可以通过lambda表达式来创建该接口的对象。</p>
+</code></pre>
 </li>
 </ul>
+<p>class Productor extends Thread{<br>    SynContainer container;<br>    public Productor(SynContainer container){<br>        this.container = container;<br>    }<br>    public void run(){<br>        for (int i = 0; i &lt; 100; i++) {<br>            container.push(new Product(i));<br>            System.out.println(“生产了”+i+”只鸡”);<br>        }<br>    }<br>}</p>
+<p>class Consumer extends Thread{<br>    SynContainer container;<br>    public Consumer(SynContainer container){<br>        this.container = container;<br>    }</p>
+<pre><code>@Override
+public void run() {
+    for (int i = 0; i &lt; 100; i++) {
+        System.out.println(&quot;消费了第&quot;+container.pop().id+&quot;只鸡&quot;);
+    }
+}</code></pre>
+<p>}</p>
+<p>class Product{<br>    int id;</p>
+<pre><code>public Product(int id) {
+    this.id = id;
+}</code></pre>
+<p>}</p>
+<p>class SynContainer{<br>    Product[] products = new Product[10];<br>    int count = 0;<br>    public synchronized void push(Product product){<br>        if(count==products.length){<br>            try {<br>                this.wait();<br>            } catch (InterruptedException e) {<br>                e.printStackTrace();<br>            }<br>        }</p>
+<pre><code>    products[count]=product;
+    count++;
+    this.notifyAll();
+}
+public synchronized Product pop(){
+    if(count==0){
+        try {
+            this.wait();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+    count--;
+    Product product = products[count];
+    this.notifyAll();
+    return product;
+}</code></pre>
+<p>}</p>
+<pre><code>### 线程池
+背景：经常创建和销毁、使用量特别大的资源，比如并发下的线程，对性能影响很大。
+思路：提前创建多线程，放入线程池，使用时直接获取，使用完放回池中。
+``` java
+public class TestPool {
+    public static void main(String[] args) {
+        //创建服务，创建线程池,参数为线程池大小
+        ExecutorService service = Executors.newFixedThreadPool(10);
+        //执行
+        service.execute(new MyThread());
+        service.execute(new MyThread());
+        service.execute(new MyThread());
+        service.execute(new MyThread());
+        //关闭链接
+        service.shutdown();
+    }
+}
+
+class MyThread implements Runnable{
+    @Override
+    public void run() {
+        System.out.println(Thread.currentThread().getName());
+    }
+}</code></pre>
+<h2 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h2><h3 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h3><p>任何一个接口，如果只包含唯一一个抽象方法，那么他就是一个函数式接口，我们可以通过lambda表达式来创建该接口的对象。</p>
 <p>定义以下接口及其类的实现</p>
 <pre class=" language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">Ilike</span><span class="token punctuation">{</span>
     <span class="token keyword">void</span> <span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
