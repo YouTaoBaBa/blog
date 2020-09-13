@@ -575,7 +575,13 @@ thread<span class="token punctuation">.</span><span class="token function">setPr
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span></code></pre>
 <h3 id="线程池"><a href="#线程池" class="headerlink" title="线程池"></a>线程池</h3><p>背景：经常创建和销毁、使用量特别大的资源，比如并发下的线程，对性能影响很大。<br>思路：提前创建多线程，放入线程池，使用时直接获取，使用完放回池中。</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestPool</span> <span class="token punctuation">{</span>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">{</span>
+  <span class="token annotation punctuation">@Override</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestPool</span> <span class="token punctuation">{</span>
   <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
       <span class="token comment" spellcheck="true">//创建服务，创建线程池,参数为线程池大小</span>
       ExecutorService service <span class="token operator">=</span> Executors<span class="token punctuation">.</span><span class="token function">newFixedThreadPool</span><span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -587,20 +593,14 @@ thread<span class="token punctuation">.</span><span class="token function">setPr
       <span class="token comment" spellcheck="true">//关闭链接</span>
       service<span class="token punctuation">.</span><span class="token function">shutdown</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-</code></pre>
+<span class="token punctuation">}</span></code></pre>
+<h2 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h2><h3 id="函数式接口"><a href="#函数式接口" class="headerlink" title="函数式接口"></a>函数式接口</h3><p>任何一个接口，如果只包含唯一一个抽象方法，那么他就是一个函数式接口，我们可以通过lambda表达式来创建该接口的对象。</p>
 </li>
 </ul>
-<p>class MyThread implements Runnable{<br>    @Override<br>    public void run() {<br>        System.out.println(Thread.currentThread().getName());<br>    }<br>}</p>
-<pre><code>## Lambda表达式
-### 函数式接口
-任何一个接口，如果只包含唯一一个抽象方法，那么他就是一个函数式接口，我们可以通过lambda表达式来创建该接口的对象。
-
-定义以下接口及其类的实现
-``` java
-interface Ilike{
-    void lambda();
-}</code></pre>
+<p>定义以下接口及其类的实现</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">Ilike</span><span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">lambda</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
 <pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//表达式只有一行的时候可以省略花括号</span>
 <span class="token comment" spellcheck="true">//lambda使用前提是函数式接口</span>
 <span class="token comment" spellcheck="true">//如果有一个或者多个参数，可以去掉参数类型，但得所有一起去，必须加上小括号</span>
