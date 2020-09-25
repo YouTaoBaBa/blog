@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Markdown基本语法, YouTaoBlog">
+    <meta name="keywords" content="推荐算法——协同过滤, YouTaoBlog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Markdown基本语法 | YouTaoBlog</title>
+    <title>推荐算法——协同过滤 | YouTaoBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -224,12 +224,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Markdown基本语法</h1>
+                    <h1 class="description center-align post-title">推荐算法——协同过滤</h1>
                 </div>
             </div>
         </div>
@@ -346,8 +346,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/blog%E4%B9%A6%E5%86%99/">
-                                <span class="chip bg-color">blog书写</span>
+                            <a href="/tags/%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/">
+                                <span class="chip bg-color">推荐算法</span>
                             </a>
                         
                     </div>
@@ -358,8 +358,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/blog%E7%9B%B8%E5%85%B3/" class="post-category">
-                                blog相关
+                            <a href="/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                推荐系统
                             </a>
                         
                     </div>
@@ -371,7 +371,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-10
+                    2020-09-15
                 </div>
                 
 
@@ -392,40 +392,18 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Markdown学习"><a href="#Markdown学习" class="headerlink" title="Markdown学习"></a>Markdown学习</h1><h2 id="标题："><a href="#标题：" class="headerlink" title="标题："></a>标题：</h2><h3 id="标题级数-’-’个数"><a href="#标题级数-’-’个数" class="headerlink" title="标题级数=’#’个数"></a>标题级数=’#’个数</h3><p>字体格式<br><strong>粗体</strong><br><em>斜体</em><br><del>废弃线</del></p>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><blockquote>
-<p>油桃牛逼</p>
-</blockquote>
-<h2 id="分割线"><a href="#分割线" class="headerlink" title="分割线"></a>分割线</h2><hr>
-<hr>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p><img src="https://coding-pages-bucket-3473233-7944306-346-307103-1302308732.cos-website.ap-hongkong.myqcloud.com/medias/featureimages/12.jpg" alt="截图"></p>
-<h2 id="超链接"><a href="#超链接" class="headerlink" title="超链接"></a>超链接</h2><p><a href="https://coding-pages-bucket-3473233-7944306-346-307103-1302308732.cos-website.ap-hongkong.myqcloud.com/" target="_blank" rel="noopener">跳转到油桃的博客首页</a></p>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><ol>
-<li>A</li>
-<li>B</li>
-<li>C</li>
-</ol>
+                <h1 id="经典：协同过滤推荐算法"><a href="#经典：协同过滤推荐算法" class="headerlink" title="经典：协同过滤推荐算法"></a>经典：协同过滤推荐算法</h1><p>算法思想：物以类聚，人以群分。<br>基本假设：</p>
 <ul>
-<li>A</li>
-<li>B</li>
-<li>C</li>
+<li>喜好相似的人洗好的东西你也很可能喜欢：基于用户的协同过滤推荐（User-based CF）</li>
+<li>跟你喜欢的东西相似的东西你也很可能喜欢：基于物品的协同过滤推荐（item-based CF）</li>
 </ul>
-<table>
-<thead>
-<tr>
-<th>名字</th>
-<th>性别</th>
-<th>生日</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>张三</td>
-<td>男</td>
-<td>1997.7</td>
-</tr>
-</tbody></table>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> pdb
-pdb<span class="token punctuation">.</span>set_trace<span class="token punctuation">(</span><span class="token punctuation">)</span></code></pre>
+<h1 id="相似度计算"><a href="#相似度计算" class="headerlink" title="相似度计算"></a>相似度计算</h1><h2 id="余弦相似度"><a href="#余弦相似度" class="headerlink" title="余弦相似度"></a>余弦相似度</h2><p>余弦相似性通过测量两个向量的夹角的余弦值来度量它们之间的相似性。0度角的余弦值是1，而其他任何角度的余弦值都不大于1；并且其最小值是-1。从而两个向量之间的角度的余弦值确定两个向量是否大致指向相同的方向。两个向量有相同的指向时，余弦相似度的值为1；两个向量夹角为90°时，余弦相似度的值为0；两个向量指向完全相反的方向时，余弦相似度的值为-1。这结果是与向量的长度无关的，仅仅与向量的指向方向相关。余弦相似度通常用于正空间，因此给出的值为0到1之间。<br>$$<br>\cos(\theta)=\frac{A \cdot B}{||A|| \cdot ||B||}<br>$$</p>
+<h2 id="皮尔逊相关系数"><a href="#皮尔逊相关系数" class="headerlink" title="皮尔逊相关系数"></a>皮尔逊相关系数</h2><p>本质上也是余弦相似度，用以度量两个变量是否是同增同减，主要衡量变量之间的变化趋势是否一致，不适合计算布尔值向量之间的相关度。</p>
+<p>对余弦相似度所用的向量的每一个分量做中心化。</p>
+<p>如果评分数据是连续的数值，比较适合余弦和皮尔逊</p>
+<h2 id="杰卡德相似度"><a href="#杰卡德相似度" class="headerlink" title="杰卡德相似度"></a>杰卡德相似度</h2><p>计算适用于$bool$类型数据<br>$$<br>J(A,B)=\frac{|A \cap B|}{|A \cup B|}<br>$$</p>
+<h2 id="评分预测"><a href="#评分预测" class="headerlink" title="评分预测"></a>评分预测</h2><h3 id="基于用户"><a href="#基于用户" class="headerlink" title="基于用户"></a>基于用户</h3><p>$$pred(u,i)=\hat{r}<em>{ui}=\frac{\sum{v\in U}sim(u,v)*r</em>{vi}}{\sum{v \in U}|sim(u,v)|}$$</p>
+<h3 id="基于物品"><a href="#基于物品" class="headerlink" title="基于物品"></a>基于物品</h3><p>$$pred(u,i)=\hat{r}<em>{ui}=\frac{\sum{j\in I</em>{rated}}sim(i,j)*r_{uj}}{\sum{j \in I_{rate}}|sim(i,j)|}$$</p>
 
             </div>
             <hr/>
@@ -451,7 +429,7 @@ pdb<span class="token punctuation">.</span>set_trace<span class="token punctuati
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/markdown-ji-ben-yu-fa/">https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/markdown-ji-ben-yu-fa/</a>
+                    <a href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/15/tui-jian-suan-fa-xie-tong-guo-lu/">https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/15/tui-jian-suan-fa-xie-tong-guo-lu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -489,8 +467,8 @@ pdb<span class="token punctuation">.</span>set_trace<span class="token punctuati
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/blog%E4%B9%A6%E5%86%99/">
-                                    <span class="chip bg-color">blog书写</span>
+                                <a href="/tags/%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/">
+                                    <span class="chip bg-color">推荐算法</span>
                                 </a>
                             
                         </div>
@@ -704,51 +682,51 @@ pdb<span class="token punctuation">.</span>set_trace<span class="token punctuati
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/09/10/cong-ling-kai-shi-da-jian-hexo-bo-ke/">
+                <a href="/2020/09/15/tui-jian-suan-fa-xie-tong-guo-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="从零开始搭建Hexo博客">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="推荐算法——协同过滤">
                         
-                        <span class="card-title">从零开始搭建Hexo博客</span>
+                        <span class="card-title">推荐算法——协同过滤</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-   准备工作:安装nodejs, 安装git, 配置github的SSH
+                            经典：协同过滤推荐算法算法思想：物以类聚，人以群分。基本假设：
 
-安装nodejs进入nodejs官网下载稳定版本，一路点击next，安装完成后，打开cmd，输入命令node -v和npm -v，如果显示版本号，安装成功
-
-安
+喜好相似的人洗好的东西你也很可能喜欢：基于用户的协同过滤推荐（User-based CF）
+跟你喜欢的东西相似的东西你也很可能喜欢：基于物品的协同过滤推荐（item-base
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-15
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/blog%E7%9B%B8%E5%85%B3/" class="post-category">
-                                    blog相关
+                            <a href="/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                    推荐系统
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/blog%E9%85%8D%E7%BD%AE/">
-                        <span class="chip bg-color">blog配置</span>
+                    <a href="/tags/%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">推荐算法</span>
                     </a>
                     
                 </div>
@@ -762,31 +740,37 @@ pdb<span class="token punctuation">.</span>set_trace<span class="token punctuati
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/10/hello-world/">
+                <a href="/2020/09/12/java-duo-xian-cheng/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="java多线程">
                         
-                        <span class="card-title">Hello World</span>
+                        <span class="card-title">java多线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hex
+                            java多线程创建线程的方式线程开启不一定立即执行，由CPU调度
+
+继承Thread类，重写run()方法，调用start开启线程
+通过实现MyRunnable接口
+定义MyRunnable类实现Runnable接口
+实现run()方法
+通
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-12
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/blog%E7%9B%B8%E5%85%B3/" class="post-category">
-                                    blog相关
+                            <a href="/categories/java/" class="post-category">
+                                    java
                                 </a>
                             
                             
@@ -796,8 +780,8 @@ pdb<span class="token punctuation">.</span>set_trace<span class="token punctuati
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%88%90Hexo/">
-                        <span class="chip bg-color">第一次配置完成Hexo</span>
+                    <a href="/tags/java%E5%A4%9A%E7%BA%BF%E7%A8%8B%E5%8F%8Alambda%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
+                        <span class="chip bg-color">java多线程及lambda表达式</span>
                     </a>
                     
                 </div>
