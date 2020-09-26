@@ -402,8 +402,8 @@
 <p>对余弦相似度所用的向量的每一个分量做中心化。</p>
 <p>如果评分数据是连续的数值，比较适合余弦和皮尔逊</p>
 <h2 id="杰卡德相似度"><a href="#杰卡德相似度" class="headerlink" title="杰卡德相似度"></a>杰卡德相似度</h2><p>计算适用于$bool$类型数据<br>$$<br>J(A,B)=\frac{|A \cap B|}{|A \cup B|}<br>$$</p>
-<h2 id="评分预测"><a href="#评分预测" class="headerlink" title="评分预测"></a>评分预测</h2><h3 id="基于用户"><a href="#基于用户" class="headerlink" title="基于用户"></a>基于用户</h3><p>$$pred(u,i)=\hat{r}<em>{ui}=\frac{\sum{v\in U}sim(u,v)*r</em>{vi}}{\sum{v \in U}|sim(u,v)|}$$</p>
-<h3 id="基于物品"><a href="#基于物品" class="headerlink" title="基于物品"></a>基于物品</h3><p>$$pred(u,i)=\hat{r}<em>{ui}=\frac{\sum{j\in I</em>{rated}}sim(i,j)*r_{uj}}{\sum{j \in I_{rate}}|sim(i,j)|}$$</p>
+<h2 id="评分预测"><a href="#评分预测" class="headerlink" title="评分预测"></a>评分预测</h2><h3 id="基于用户"><a href="#基于用户" class="headerlink" title="基于用户"></a>基于用户</h3><p>$$<br>pred(u,i)=\hat{r}<em>{ui}=\frac{\sum{v\in U}sim(u,v)*r</em>{vi}}{\sum{v \in U}|sim(u,v)|}<br>$$</p>
+<h3 id="基于物品"><a href="#基于物品" class="headerlink" title="基于物品"></a>基于物品</h3><p>$$<br>pred(u,i)=\hat{r}<em>{ui}=\frac{\sum{j\in I</em>{rated}}sim(i,j)*r_{uj}}{\sum{j \in I_{rate}}|sim(i,j)|}<br>$$</p>
 <h2 id="基于模型的协同过滤算法"><a href="#基于模型的协同过滤算法" class="headerlink" title="基于模型的协同过滤算法"></a>基于模型的协同过滤算法</h2><h3 id="基于图模型"><a href="#基于图模型" class="headerlink" title="基于图模型"></a>基于图模型</h3><ul>
 <li>将用户行为数据表示为二分图</li>
 <li>基于二分图为用户进行推荐</li>
@@ -1005,7 +1005,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">5.1k</span>&nbsp;字
+                class="white-color">5.3k</span>&nbsp;字
             
             
             
