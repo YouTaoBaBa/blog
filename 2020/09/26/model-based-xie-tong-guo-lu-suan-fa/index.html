@@ -403,14 +403,12 @@
 <li>找出每个用户普遍高于或低于他人的偏置值$b_{u}$</li>
 <li>找出每件物品普遍高于或低于其他物品的偏置值$b_{i}$</li>
 <li>目标转换为寻找最优的$b_{u}$和$b_{i}$<h3 id="使用Baseline思想的预测步骤"><a href="#使用Baseline思想的预测步骤" class="headerlink" title="使用Baseline思想的预测步骤"></a>使用Baseline思想的预测步骤</h3></li>
-</ul>
-<ol>
 <li>计算所有电影的均分$\mu$</li>
 <li>计算每个用户评分与平均评分$\mu$的偏置值$b_{u}$</li>
 <li>计算每部电影所接受的评分与平均评分$\mu$的偏置值$b_{I}$</li>
 <li>预测用户对电影的评分：<script type="math/tex; mode=display">
 \hat{r}_{ui}=b_{ui}=\mu + b_{u}+b_{i}</script></li>
-</ol>
+</ul>
 
             </div>
             <hr/>
