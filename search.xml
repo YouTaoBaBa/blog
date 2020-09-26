@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>推荐系统评估</title>
+      <link href="/2020/09/26/tui-jian-xi-tong-ping-gu/"/>
+      <url>/2020/09/26/tui-jian-xi-tong-ping-gu/</url>
+      
+        <content type="html"><![CDATA[<h1 id="推荐系统评估"><a href="#推荐系统评估" class="headerlink" title="推荐系统评估"></a>推荐系统评估</h1><h2 id="常用评估指标"><a href="#常用评估指标" class="headerlink" title="常用评估指标"></a>常用评估指标</h2><p>准确性、信任度、满意度、实时性、覆盖率、鲁棒性、多样性、可拓展性、新颖性、商业目标、惊喜度、用户留存。</p><h2 id="准确性（理论角度）"><a href="#准确性（理论角度）" class="headerlink" title="准确性（理论角度）"></a>准确性（理论角度）</h2><ul><li>评分预测<br>RMSE MAE</li><li>topN推荐<br>召回率、精准率<h2 id="覆盖度"><a href="#覆盖度" class="headerlink" title="覆盖度"></a>覆盖度</h2></li><li>信息熵，越大越好</li><li>覆盖率<h2 id="多样性-amp-新颖性-amp-惊喜性"><a href="#多样性-amp-新颖性-amp-惊喜性" class="headerlink" title="多样性&amp;新颖性&amp;惊喜性"></a>多样性&amp;新颖性&amp;惊喜性</h2>往往会牺牲准确性<h3 id="探索与利用问题"><a href="#探索与利用问题" class="headerlink" title="探索与利用问题"></a>探索与利用问题</h3></li><li>开发、利用：选择现在可能的最佳方案</li><li>探索、搜索：选择现在不确定的一些方案，但未来可能会有高收益的方案</li><li>在做两类决策的过程中，不断更新对所有决策的不确定性的认知，优化长期的目标</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 推荐系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 推荐算法评估 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>推荐算法——协同过滤</title>
       <link href="/2020/09/15/tui-jian-suan-fa-xie-tong-guo-lu/"/>
       <url>/2020/09/15/tui-jian-suan-fa-xie-tong-guo-lu/</url>
       
-        <content type="html"><![CDATA[<h1 id="经典：协同过滤推荐算法"><a href="#经典：协同过滤推荐算法" class="headerlink" title="经典：协同过滤推荐算法"></a>经典：协同过滤推荐算法</h1><p>算法思想：物以类聚，人以群分。<br>基本假设：</p><ul><li>喜好相似的人洗好的东西你也很可能喜欢：基于用户的协同过滤推荐（User-based CF）</li><li>跟你喜欢的东西相似的东西你也很可能喜欢：基于物品的协同过滤推荐（item-based CF）</li></ul><h1 id="相似度计算"><a href="#相似度计算" class="headerlink" title="相似度计算"></a>相似度计算</h1><h2 id="余弦相似度"><a href="#余弦相似度" class="headerlink" title="余弦相似度"></a>余弦相似度</h2><p>余弦相似性通过测量两个向量的夹角的余弦值来度量它们之间的相似性。0度角的余弦值是1，而其他任何角度的余弦值都不大于1；并且其最小值是-1。从而两个向量之间的角度的余弦值确定两个向量是否大致指向相同的方向。两个向量有相同的指向时，余弦相似度的值为1；两个向量夹角为90°时，余弦相似度的值为0；两个向量指向完全相反的方向时，余弦相似度的值为-1。这结果是与向量的长度无关的，仅仅与向量的指向方向相关。余弦相似度通常用于正空间，因此给出的值为0到1之间。<br>$$<br>\cos(\theta)=\frac{A \cdot B}{||A|| \cdot ||B||}<br>$$</p><h2 id="皮尔逊相关系数"><a href="#皮尔逊相关系数" class="headerlink" title="皮尔逊相关系数"></a>皮尔逊相关系数</h2><p>本质上也是余弦相似度，用以度量两个变量是否是同增同减，主要衡量变量之间的变化趋势是否一致，不适合计算布尔值向量之间的相关度。</p><p>对余弦相似度所用的向量的每一个分量做中心化。</p><p>如果评分数据是连续的数值，比较适合余弦和皮尔逊</p><h2 id="杰卡德相似度"><a href="#杰卡德相似度" class="headerlink" title="杰卡德相似度"></a>杰卡德相似度</h2><p>计算适用于$bool$类型数据<br>$$<br>J(A,B)=\frac{|A \cap B|}{|A \cup B|}<br>$$</p><h2 id="评分预测"><a href="#评分预测" class="headerlink" title="评分预测"></a>评分预测</h2><h3 id="基于用户"><a href="#基于用户" class="headerlink" title="基于用户"></a>基于用户</h3><p>$$pred(u,i)=\hat{r}<em>{ui}=\frac{\sum{v\in U}sim(u,v)*r</em>{vi}}{\sum{v \in U}|sim(u,v)|}$$</p><h3 id="基于物品"><a href="#基于物品" class="headerlink" title="基于物品"></a>基于物品</h3><p>$$pred(u,i)=\hat{r}<em>{ui}=\frac{\sum{j\in I</em>{rated}}sim(i,j)*r_{uj}}{\sum{j \in I_{rate}}|sim(i,j)|}$$</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="经典：协同过滤推荐算法"><a href="#经典：协同过滤推荐算法" class="headerlink" title="经典：协同过滤推荐算法"></a>经典：协同过滤推荐算法</h1><p>算法思想：物以类聚，人以群分。<br>基本假设：</p><ul><li>喜好相似的人洗好的东西你也很可能喜欢：基于用户的协同过滤推荐（User-based CF）</li><li>跟你喜欢的东西相似的东西你也很可能喜欢：基于物品的协同过滤推荐（item-based CF）</li></ul><h1 id="相似度计算"><a href="#相似度计算" class="headerlink" title="相似度计算"></a>相似度计算</h1><h2 id="余弦相似度"><a href="#余弦相似度" class="headerlink" title="余弦相似度"></a>余弦相似度</h2><p>余弦相似性通过测量两个向量的夹角的余弦值来度量它们之间的相似性。0度角的余弦值是1，而其他任何角度的余弦值都不大于1；并且其最小值是-1。从而两个向量之间的角度的余弦值确定两个向量是否大致指向相同的方向。两个向量有相同的指向时，余弦相似度的值为1；两个向量夹角为90°时，余弦相似度的值为0；两个向量指向完全相反的方向时，余弦相似度的值为-1。这结果是与向量的长度无关的，仅仅与向量的指向方向相关。余弦相似度通常用于正空间，因此给出的值为0到1之间。<br>$$<br>\cos(\theta)=\frac{A \cdot B}{||A|| \cdot ||B||}<br>$$</p><h2 id="皮尔逊相关系数"><a href="#皮尔逊相关系数" class="headerlink" title="皮尔逊相关系数"></a>皮尔逊相关系数</h2><p>本质上也是余弦相似度，用以度量两个变量是否是同增同减，主要衡量变量之间的变化趋势是否一致，不适合计算布尔值向量之间的相关度。</p><p>对余弦相似度所用的向量的每一个分量做中心化。</p><p>如果评分数据是连续的数值，比较适合余弦和皮尔逊</p><h2 id="杰卡德相似度"><a href="#杰卡德相似度" class="headerlink" title="杰卡德相似度"></a>杰卡德相似度</h2><p>计算适用于$bool$类型数据<br>$$<br>J(A,B)=\frac{|A \cap B|}{|A \cup B|}<br>$$</p><h2 id="评分预测"><a href="#评分预测" class="headerlink" title="评分预测"></a>评分预测</h2><h3 id="基于用户"><a href="#基于用户" class="headerlink" title="基于用户"></a>基于用户</h3><p>$$pred(u,i)=\hat{r}<em>{ui}=\frac{\sum{v\in U}sim(u,v)*r</em>{vi}}{\sum{v \in U}|sim(u,v)|}$$</p><h3 id="基于物品"><a href="#基于物品" class="headerlink" title="基于物品"></a>基于物品</h3><p>$$pred(u,i)=\hat{r}<em>{ui}=\frac{\sum{j\in I</em>{rated}}sim(i,j)*r_{uj}}{\sum{j \in I_{rate}}|sim(i,j)|}$$</p><h2 id="基于模型的协同过滤算法"><a href="#基于模型的协同过滤算法" class="headerlink" title="基于模型的协同过滤算法"></a>基于模型的协同过滤算法</h2><h3 id="基于图模型"><a href="#基于图模型" class="headerlink" title="基于图模型"></a>基于图模型</h3><ul><li>将用户行为数据表示为二分图</li><li>基于二分图为用户进行推荐</li><li>根据两个顶点之间的路径数、路径长度和经过的顶点数来评价两个顶点的相关性</li></ul><h3 id="基于矩阵分解的方法"><a href="#基于矩阵分解的方法" class="headerlink" title="基于矩阵分解的方法"></a>基于矩阵分解的方法</h3><ul><li>适用于解决稀疏数据</li><li>将M×N的用户-物品矩阵分解为M×K的用户矩阵和K×N的物品矩阵，取出第一行的1×K和第一列的K×1做点乘即为第一个用户对第一个物品的得分。</li><li>分解后的两矩阵相乘应尽可能等于原矩阵，损失函数为原矩阵与分解后重新乘起来的矩阵的L2距离。（利用ALS,交替最小二乘法优化)</li></ul>]]></content>
       
       
       <categories>

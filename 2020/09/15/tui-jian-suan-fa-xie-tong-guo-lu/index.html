@@ -404,6 +404,16 @@
 <h2 id="杰卡德相似度"><a href="#杰卡德相似度" class="headerlink" title="杰卡德相似度"></a>杰卡德相似度</h2><p>计算适用于$bool$类型数据<br>$$<br>J(A,B)=\frac{|A \cap B|}{|A \cup B|}<br>$$</p>
 <h2 id="评分预测"><a href="#评分预测" class="headerlink" title="评分预测"></a>评分预测</h2><h3 id="基于用户"><a href="#基于用户" class="headerlink" title="基于用户"></a>基于用户</h3><p>$$pred(u,i)=\hat{r}<em>{ui}=\frac{\sum{v\in U}sim(u,v)*r</em>{vi}}{\sum{v \in U}|sim(u,v)|}$$</p>
 <h3 id="基于物品"><a href="#基于物品" class="headerlink" title="基于物品"></a>基于物品</h3><p>$$pred(u,i)=\hat{r}<em>{ui}=\frac{\sum{j\in I</em>{rated}}sim(i,j)*r_{uj}}{\sum{j \in I_{rate}}|sim(i,j)|}$$</p>
+<h2 id="基于模型的协同过滤算法"><a href="#基于模型的协同过滤算法" class="headerlink" title="基于模型的协同过滤算法"></a>基于模型的协同过滤算法</h2><h3 id="基于图模型"><a href="#基于图模型" class="headerlink" title="基于图模型"></a>基于图模型</h3><ul>
+<li>将用户行为数据表示为二分图</li>
+<li>基于二分图为用户进行推荐</li>
+<li>根据两个顶点之间的路径数、路径长度和经过的顶点数来评价两个顶点的相关性</li>
+</ul>
+<h3 id="基于矩阵分解的方法"><a href="#基于矩阵分解的方法" class="headerlink" title="基于矩阵分解的方法"></a>基于矩阵分解的方法</h3><ul>
+<li>适用于解决稀疏数据</li>
+<li>将M×N的用户-物品矩阵分解为M×K的用户矩阵和K×N的物品矩阵，取出第一行的1×K和第一列的K×1做点乘即为第一个用户对第一个物品的得分。</li>
+<li>分解后的两矩阵相乘应尽可能等于原矩阵，损失函数为原矩阵与分解后重新乘起来的矩阵的L2距离。（利用ALS,交替最小二乘法优化)</li>
+</ul>
 
             </div>
             <hr/>
@@ -682,33 +692,34 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/09/15/tui-jian-suan-fa-xie-tong-guo-lu/">
+                <a href="/2020/09/26/tui-jian-xi-tong-ping-gu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="推荐算法——协同过滤">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="推荐系统评估">
                         
-                        <span class="card-title">推荐算法——协同过滤</span>
+                        <span class="card-title">推荐系统评估</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            经典：协同过滤推荐算法算法思想：物以类聚，人以群分。基本假设：
-
-喜好相似的人洗好的东西你也很可能喜欢：基于用户的协同过滤推荐（User-based CF）
-跟你喜欢的东西相似的东西你也很可能喜欢：基于物品的协同过滤推荐（item-base
+                            推荐系统评估常用评估指标准确性、信任度、满意度、实时性、覆盖率、鲁棒性、多样性、可拓展性、新颖性、商业目标、惊喜度、用户留存。
+准确性（理论角度）
+评分预测RMSE MAE
+topN推荐召回率、精准率覆盖度
+信息熵，越大越好
+覆盖率多样性&
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-15
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-26
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -721,12 +732,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">推荐算法</span>
+                    <a href="/tags/%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E8%AF%84%E4%BC%B0/">
+                        <span class="chip bg-color">推荐算法评估</span>
                     </a>
                     
                 </div>
@@ -988,7 +998,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.7k</span>&nbsp;字
+                class="white-color">5.1k</span>&nbsp;字
             
             
             

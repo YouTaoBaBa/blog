@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="git使用, YouTaoBlog">
+    <meta name="keywords" content="推荐系统评估, YouTaoBlog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>git使用 | YouTaoBlog</title>
+    <title>推荐系统评估 | YouTaoBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -224,12 +224,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">git使用</h1>
+                    <h1 class="description center-align post-title">推荐系统评估</h1>
                 </div>
             </div>
         </div>
@@ -346,8 +346,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/git%E4%BD%BF%E7%94%A8/">
-                                <span class="chip bg-color">git使用</span>
+                            <a href="/tags/%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E8%AF%84%E4%BC%B0/">
+                                <span class="chip bg-color">推荐算法评估</span>
                             </a>
                         
                     </div>
@@ -358,8 +358,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/git/" class="post-category">
-                                git
+                            <a href="/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                推荐系统
                             </a>
                         
                     </div>
@@ -371,7 +371,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-11
+                    2020-09-26
                 </div>
                 
 
@@ -392,40 +392,16 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Git基本使用"><a href="#Git基本使用" class="headerlink" title="Git基本使用"></a>Git基本使用</h1><h2 id="必要配置"><a href="#必要配置" class="headerlink" title="必要配置"></a>必要配置</h2><h3 id="查看当前项目下的配置"><a href="#查看当前项目下的配置" class="headerlink" title="查看当前项目下的配置"></a>查看当前项目下的配置</h3><pre class=" language-git"><code class="language-git">git config -l  #查看所有配置
-git config --system -l #查看系统配置
-git config --global --list #查看用户配置</code></pre>
-<h3 id="配置用户变量"><a href="#配置用户变量" class="headerlink" title="配置用户变量"></a>配置用户变量</h3><pre class=" language-git"><code class="language-git">git config --global user.name <span class="token string">"YouTaoBaBa"</span> #配置用户名
-git config --global user.email 674508620@qq.com #配置用户邮箱</code></pre>
-<h2 id="配置公钥"><a href="#配置公钥" class="headerlink" title="配置公钥"></a>配置公钥</h2><p>用户目录下找.ssh文件夹里找-d_rsa.pub，如果没有，则使用以下命令生成公钥，然后将公钥复制到远程仓库管理(github,gitee,coding等)的ssh配置里</p>
-<pre class=" language-git"><code class="language-git">ssh-keygen -t rsa</code></pre>
-<h2 id="git基本操作"><a href="#git基本操作" class="headerlink" title="git基本操作"></a>git基本操作</h2><h3 id="本地仓库搭建"><a href="#本地仓库搭建" class="headerlink" title="本地仓库搭建"></a>本地仓库搭建</h3><pre class=" language-git"><code class="language-git">git init #本地初始化
-git clone [url](https或者ssh) #复制远程仓库</code></pre>
-<h3 id="添加到暂存区"><a href="#添加到暂存区" class="headerlink" title="添加到暂存区"></a>添加到暂存区</h3><pre class=" language-git"><code class="language-git">git add . #添加所有文件到暂存区</code></pre>
-<h3 id="查看文件状态"><a href="#查看文件状态" class="headerlink" title="查看文件状态"></a>查看文件状态</h3><pre class=" language-git"><code class="language-git">git status</code></pre>
-<h3 id="提交暂存区至本地仓库"><a href="#提交暂存区至本地仓库" class="headerlink" title="提交暂存区至本地仓库"></a>提交暂存区至本地仓库</h3><pre class=" language-git"><code class="language-git">git commit -m <span class="token string">"filename"</span></code></pre>
-<h3 id="提交至远程仓库"><a href="#提交至远程仓库" class="headerlink" title="提交至远程仓库"></a>提交至远程仓库</h3><pre class=" language-git"><code class="language-git">git push (origin master)</code></pre>
-<h3 id="同步远程仓库至本地仓库"><a href="#同步远程仓库至本地仓库" class="headerlink" title="同步远程仓库至本地仓库"></a>同步远程仓库至本地仓库</h3><pre><code>git pull</code></pre>
-<h3 id="忽略文件"><a href="#忽略文件" class="headerlink" title="忽略文件"></a>忽略文件</h3><p>在主目录下建立 “.gitignore”文件，文件规则如下：</p>
-<ol>
-<li>忽略文件中的空行和井号开始的行会被忽略</li>
-<li>可以使用linux通配符</li>
-<li>名称最前面有!表示例外规则，不被忽略</li>
-<li>名称前面德文路径分隔符(‘/‘)表示要忽略的文件在此目录下，而子目录的文件不忽略</li>
-<li>如果名称的最后一个是路径分隔符(‘/‘)表示忽略的是此目录下该名称的子目录，而非文件(默认文件或目录都忽略)。</li>
-</ol>
-<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>查看所有分支</p>
-<pre class=" language-git"><code class="language-git">git branch
-git branch -r #查看远程分支</code></pre>
-<p>新建分支dev</p>
-<pre class=" language-git"><code class="language-git">git branch dev
-git checkout -b dev #新建一个分支并切换到这个分支</code></pre>
-<p>切换分支</p>
-<pre class=" language-git"><code class="language-git">git checkout master</code></pre>
-<p>删除分支dev</p>
-<pre class=" language-git"><code class="language-git">git branch -d dev</code></pre>
-<p>合并指定分支到当前分支</p>
-<pre class=" language-git"><code class="language-git">git merge [branch]</code></pre>
+                <h1 id="推荐系统评估"><a href="#推荐系统评估" class="headerlink" title="推荐系统评估"></a>推荐系统评估</h1><h2 id="常用评估指标"><a href="#常用评估指标" class="headerlink" title="常用评估指标"></a>常用评估指标</h2><p>准确性、信任度、满意度、实时性、覆盖率、鲁棒性、多样性、可拓展性、新颖性、商业目标、惊喜度、用户留存。</p>
+<h2 id="准确性（理论角度）"><a href="#准确性（理论角度）" class="headerlink" title="准确性（理论角度）"></a>准确性（理论角度）</h2><ul>
+<li>评分预测<br>RMSE MAE</li>
+<li>topN推荐<br>召回率、精准率<h2 id="覆盖度"><a href="#覆盖度" class="headerlink" title="覆盖度"></a>覆盖度</h2></li>
+<li>信息熵，越大越好</li>
+<li>覆盖率<h2 id="多样性-amp-新颖性-amp-惊喜性"><a href="#多样性-amp-新颖性-amp-惊喜性" class="headerlink" title="多样性&amp;新颖性&amp;惊喜性"></a>多样性&amp;新颖性&amp;惊喜性</h2>往往会牺牲准确性<h3 id="探索与利用问题"><a href="#探索与利用问题" class="headerlink" title="探索与利用问题"></a>探索与利用问题</h3></li>
+<li>开发、利用：选择现在可能的最佳方案</li>
+<li>探索、搜索：选择现在不确定的一些方案，但未来可能会有高收益的方案</li>
+<li>在做两类决策的过程中，不断更新对所有决策的不确定性的认知，优化长期的目标</li>
+</ul>
 
             </div>
             <hr/>
@@ -451,7 +427,7 @@ git checkout -b dev #新建一个分支并切换到这个分支</code></pre>
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/11/git-shi-yong/">https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/11/git-shi-yong/</a>
+                    <a href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/26/tui-jian-xi-tong-ping-gu/">https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/26/tui-jian-xi-tong-ping-gu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -489,8 +465,8 @@ git checkout -b dev #新建一个分支并切换到这个分支</code></pre>
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/git%E4%BD%BF%E7%94%A8/">
-                                    <span class="chip bg-color">git使用</span>
+                                <a href="/tags/%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E8%AF%84%E4%BC%B0/">
+                                    <span class="chip bg-color">推荐算法评估</span>
                                 </a>
                             
                         </div>
@@ -704,55 +680,53 @@ git checkout -b dev #新建一个分支并切换到这个分支</code></pre>
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/09/12/java-chang-yong-lei/">
+                <a href="/2020/09/26/tui-jian-xi-tong-ping-gu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="java常用类">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="推荐系统评估">
                         
-                        <span class="card-title">java常用类</span>
+                        <span class="card-title">推荐系统评估</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java常用类Object类方法：
-hashcode()
-toString()
-clone()
-getClass()
-notify()//唤起等待状态的线程
-wait()//线程等待，与sleep不同在他会释放锁
-equals()
-
-Mat
+                            推荐系统评估常用评估指标准确性、信任度、满意度、实时性、覆盖率、鲁棒性、多样性、可拓展性、新颖性、商业目标、惊喜度、用户留存。
+准确性（理论角度）
+评分预测RMSE MAE
+topN推荐召回率、精准率覆盖度
+信息熵，越大越好
+覆盖率多样性&
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-12
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-26
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java/" class="post-category">
-                                    java
+                            <a href="/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                    推荐系统
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java%E5%B8%B8%E7%94%A8%E7%B1%BB/">
-                        <span class="chip bg-color">java常用类</span>
+                    <a href="/tags/%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E8%AF%84%E4%BC%B0/">
+                        <span class="chip bg-color">推荐算法评估</span>
                     </a>
                     
                 </div>
@@ -766,36 +740,34 @@ Mat
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/10/cong-ling-kai-shi-da-jian-hexo-bo-ke/">
+                <a href="/2020/09/15/tui-jian-suan-fa-xie-tong-guo-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="从零开始搭建Hexo博客">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="推荐算法——协同过滤">
                         
-                        <span class="card-title">从零开始搭建Hexo博客</span>
+                        <span class="card-title">推荐算法——协同过滤</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            
-   准备工作:安装nodejs, 安装git, 配置github的SSH
+                            经典：协同过滤推荐算法算法思想：物以类聚，人以群分。基本假设：
 
-安装nodejs进入nodejs官网下载稳定版本，一路点击next，安装完成后，打开cmd，输入命令node -v和npm -v，如果显示版本号，安装成功
-
-安
+喜好相似的人洗好的东西你也很可能喜欢：基于用户的协同过滤推荐（User-based CF）
+跟你喜欢的东西相似的东西你也很可能喜欢：基于物品的协同过滤推荐（item-base
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-10
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-15
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/blog%E7%9B%B8%E5%85%B3/" class="post-category">
-                                    blog相关
+                            <a href="/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/" class="post-category">
+                                    推荐系统
                                 </a>
                             
                             
@@ -805,8 +777,8 @@ Mat
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/blog%E9%85%8D%E7%BD%AE/">
-                        <span class="chip bg-color">blog配置</span>
+                    <a href="/tags/%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/">
+                        <span class="chip bg-color">推荐算法</span>
                     </a>
                     
                 </div>
