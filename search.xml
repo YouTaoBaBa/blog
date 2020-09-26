@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>基于内容的推荐</title>
+      <link href="/2020/09/26/ji-yu-nei-rong-de-tui-jian/"/>
+      <url>/2020/09/26/ji-yu-nei-rong-de-tui-jian/</url>
+      
+        <content type="html"><![CDATA[<h1 id="基于内容的推荐"><a href="#基于内容的推荐" class="headerlink" title="基于内容的推荐"></a>基于内容的推荐</h1><ul><li>给物品打标签<ul><li>系统自己提取，从业务数据库中提取</li><li>用户填写</li><li>中文分词 利用算法计算词的权重<ul><li>tf-idf:$\quad tf*idf$<ul><li>tf:term frequency词频</li><li>idf:逆文档频率 $log_{10}\frac{t}{n}$</li></ul></li><li>textrank</li></ul></li></ul></li><li>利用标签的文字，转换为词向量<ul><li>word2vec 词-&gt;向量</li><li>用向量表示语义</li><li>如果两个词向量的相似度高，认为两词语义相近</li></ul></li><li>利用词向量，构建物品的向量<ul><li>一个物品有N个关键词，每一个关键词对应一个词向量</li><li>求和（权重*词向量）/N</li><li>利用N个关键词的词向量获取物品向量</li></ul></li><li>通过物品向量计算相似度<ul><li>皮尔逊 相关系数 计算物品向量的相似度</li></ul></li></ul><h2 id="基于内容的推荐与基于物品的协同过滤的区别"><a href="#基于内容的推荐与基于物品的协同过滤的区别" class="headerlink" title="基于内容的推荐与基于物品的协同过滤的区别"></a>基于内容的推荐与基于物品的协同过滤的区别</h2><ul><li>基于内容：词向量-&gt;物品向量-&gt;计算相似度</li><li>基于物品：用户-物品矩阵-&gt;物品向量-&gt;相似度</li><li>差异：<ul><li>物品向量构建过程不同</li><li>基于内容<ul><li>物品向量 文本（物品描述信息，系统填标签，用户填标签）</li></ul></li><li>基于物品<ul><li>用户对物品的评分矩阵，用户的行为数据</li></ul></li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 推荐系统 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 基于内容的推荐 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>推荐系统评估</title>
       <link href="/2020/09/26/tui-jian-xi-tong-ping-gu/"/>
       <url>/2020/09/26/tui-jian-xi-tong-ping-gu/</url>

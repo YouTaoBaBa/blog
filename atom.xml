@@ -6,7 +6,7 @@
   <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/atom.xml" rel="self"/>
   
   <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/"/>
-  <updated>2020-09-26T08:58:57.013Z</updated>
+  <updated>2020-09-26T09:29:41.551Z</updated>
   <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>基于内容的推荐</title>
+    <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/26/ji-yu-nei-rong-de-tui-jian/"/>
+    <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/26/ji-yu-nei-rong-de-tui-jian/</id>
+    <published>2020-09-26T09:00:26.000Z</published>
+    <updated>2020-09-26T09:29:41.551Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;基于内容的推荐&quot;&gt;&lt;a href=&quot;#基于内容的推荐&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="推荐系统" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="基于内容的推荐" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/%E5%9F%BA%E4%BA%8E%E5%86%85%E5%AE%B9%E7%9A%84%E6%8E%A8%E8%8D%90/"/>
+    
+  </entry>
   
   <entry>
     <title>推荐系统评估</title>
