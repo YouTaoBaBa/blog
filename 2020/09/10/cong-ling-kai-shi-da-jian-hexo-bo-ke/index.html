@@ -434,50 +434,61 @@
 <p>输入命令<code>hexo g &amp;&amp; hexo d</code>，然后再输入Github Pages的网址就能够访问了</p>
 <h3 id="美化主题"><a href="#美化主题" class="headerlink" title="美化主题"></a>美化主题</h3><p>默认的主题样式一般，选择更好看的主题matery</p>
 <p>进入到<code>themes</code>文件夹</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">git</span> clone https://github.com/blinkfox/hexo-theme-matery.git</code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">git clone https://github.com/blinkfox/hexo-theme-matery.git
+</code></pre>
 <p>修改 Hexo 根目录下的 <code>_config.yml</code> 的 <code>theme</code> 的值：<code>theme: hexo-theme-matery</code></p>
 <p>修改 <code>_config.yml</code> 的 <code>url</code> 的值为网站主 <code>URL</code>（如：<code>http://xxx.github.io</code>）。</p>
 <h3 id="新建分类-categories-页"><a href="#新建分类-categories-页" class="headerlink" title="新建分类 categories 页"></a>新建分类 categories 页</h3><p><code>categories</code> 页是用来展示所有分类的页面，如果在你的博客 <code>source</code> 目录下还没有 <code>categories/index.md</code> 文件，那么你就需要新建一个，命令如下：</p>
-<pre class=" language-bash"><code class="language-bash">hexo new page <span class="token string">"categories"</span></code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">hexo new page "categories"
+</code></pre>
 <p>编辑你刚刚新建的页面文件 <code>/source/categories/index.md</code>，至少需要以下内容：</p>
-<pre class=" language-bash"><code class="language-bash">---
+<pre class=" language-lang-bash"><code class="language-lang-bash">---
 title: categories
 date: 2018-09-30 17:25:30
-type: <span class="token string">"categories"</span>
-layout: <span class="token string">"categories"</span>
----</code></pre>
+type: "categories"
+layout: "categories"
+---
+</code></pre>
 <h3 id="新建标签-tags-页"><a href="#新建标签-tags-页" class="headerlink" title="新建标签 tags 页"></a>新建标签 tags 页</h3><p><code>tags</code> 页是用来展示所有标签的页面，如果在你的博客 <code>source</code> 目录下还没有 <code>tags/index.md</code> 文件，那么你就需要新建一个，命令如下：</p>
-<pre class=" language-bash"><code class="language-bash">hexo new page <span class="token string">"tags"</span></code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">hexo new page "tags"
+</code></pre>
 <p>编辑你刚刚新建的页面文件 <code>/source/tags/index.md</code>，至少需要以下内容：</p>
-<pre class=" language-bash"><code class="language-bash">---
+<pre class=" language-lang-bash"><code class="language-lang-bash">---
 title: tags
 date: 2018-09-30 18:23:38
-type: <span class="token string">"tags"</span>
-layout: <span class="token string">"tags"</span>
----</code></pre>
+type: "tags"
+layout: "tags"
+---
+</code></pre>
 <h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>由于 Hexo 自带的代码高亮主题显示不好看，所以主题中使用到了 <a href="https://github.com/ele828/hexo-prism-plugin" target="_blank" rel="noopener">hexo-prism-plugin</a> 的 Hexo 插件来做代码高亮，安装命令如下：</p>
-<pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> i -S hexo-prism-plugin</code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">npm i -S hexo-prism-plugin
+</code></pre>
 <p>然后，修改 Hexo 根目录下 <code>_config.yml</code> 文件中 <code>highlight.enable</code> 的值为 <code>false</code>，并新增 <code>prism</code> 插件相关的配置，主要配置如下：</p>
-<pre class=" language-bash"><code class="language-bash">highlight:
-  enable: <span class="token boolean">false</span>
+<pre class=" language-lang-bash"><code class="language-lang-bash">highlight:
+  enable: false
 
 prism_plugin:
-  mode: <span class="token string">'preprocess'</span>    <span class="token comment" spellcheck="true"># realtime/preprocess</span>
-  theme: <span class="token string">'tomorrow'</span>
-  line_number: <span class="token boolean">false</span>    <span class="token comment" spellcheck="true"># default false</span>
-  custom_css:</code></pre>
-<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> hexo-generator-search --save</code></pre>
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'tomorrow'
+  line_number: false    # default false
+  custom_css:
+</code></pre>
+<h3 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h3><pre class=" language-lang-bash"><code class="language-lang-bash">npm install hexo-generator-search --save
+</code></pre>
 <p>在 Hexo 根目录下的 <code>_config.yml</code> 文件中，新增以下的配置项：</p>
-<pre class=" language-bash"><code class="language-bash">search:
+<pre class=" language-lang-bash"><code class="language-lang-bash">search:
   path: search.xml
-  field: post</code></pre>
-<h3 id="文章字数统计插件（可选的）"><a href="#文章字数统计插件（可选的）" class="headerlink" title="文章字数统计插件（可选的）"></a>文章字数统计插件（可选的）</h3><pre class=" language-bash"><code class="language-bash"><span class="token function">npm</span> i --save hexo-wordcount</code></pre>
+  field: post
+</code></pre>
+<h3 id="文章字数统计插件（可选的）"><a href="#文章字数统计插件（可选的）" class="headerlink" title="文章字数统计插件（可选的）"></a>文章字数统计插件（可选的）</h3><pre class=" language-lang-bash"><code class="language-lang-bash">npm i --save hexo-wordcount
+</code></pre>
 <p>然后只需在本主题下的 <code>_config.yml</code> 文件中，激活以下配置项即可：</p>
-<pre class=" language-bash"><code class="language-bash">wordCount:
-  enable: <span class="token boolean">false</span> <span class="token comment" spellcheck="true"># 将这个值设置为 true 即可.</span>
-  postWordCount: <span class="token boolean">true</span>
-  min2read: <span class="token boolean">true</span>
-  totalCount: <span class="token boolean">true</span></code></pre>
+<pre class=" language-lang-bash"><code class="language-lang-bash">wordCount:
+  enable: false # 将这个值设置为 true 即可.
+  postWordCount: true
+  min2read: true
+  totalCount: true
+</code></pre>
 
             </div>
             <hr/>
@@ -775,7 +786,8 @@ prism_plugin:
                             Git基本使用必要配置查看当前项目下的配置git config -l  #查看所有配置
 git config --system -l #查看系统配置
 git config --global --list #查看用户配置
-配置用户变量git 
+
+配置用户变量git
                         
                     </div>
                     <div class="publish-info">
@@ -845,9 +857,11 @@ C
 
 
 
+
 名字
 性别
 生日
+
 
 
 
@@ -856,7 +870,9 @@ C
 1997.7
 
 
-代码impor
+
+
+代码i
                         
                     </div>
                     <div class="publish-info">

@@ -402,209 +402,230 @@
 <li>equals()</li>
 </ul>
 <h2 id="Math类"><a href="#Math类" class="headerlink" title="Math类"></a>Math类</h2><p>常见的数学运算</p>
-<pre class=" language-java"><code class="language-java">System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"90度的正弦值："</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">sin</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span>PI <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"2的平方根与2商的反弦值:"</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">asin</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"e的平方值："</span><span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">exp</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"以e为底2的对数值:"</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"以10为底2的对数值:"</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">log10</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"2的平方根:"</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">sqrt</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"2的平方:"</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">pow</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"不小于3.5的最小整数"</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">ceil</span><span class="token punctuation">(</span><span class="token number">3.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"不大于3.5的最大整数:"</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token number">3.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"3.5的四舍五入:"</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">round</span><span class="token punctuation">(</span><span class="token number">3.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"3.5最接近的整数为，同样接近取偶数："</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">rint</span><span class="token punctuation">(</span><span class="token number">3.5</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-lang-java"><code class="language-lang-java">System.out.println("90度的正弦值：" + Math.sin(Math.PI / 2));
+System.out.println("2的平方根与2商的反弦值:" + Math.asin(Math.sqrt(2)/2));
+System.out.println("e的平方值："+ Math.exp(2));
+System.out.println("以e为底2的对数值:" + Math.log(2));
+System.out.println("以10为底2的对数值:" + Math.log10(2));
+System.out.println("2的平方根:" + Math.sqrt(2));
+System.out.println("2的平方:" + Math.pow(2,2));
+System.out.println("不小于3.5的最小整数" + Math.ceil(3.5));
+System.out.println("不大于3.5的最大整数:" + Math.floor(3.5));
+System.out.println("3.5的四舍五入:" + Math.round(3.5));
+System.out.println("3.5最接近的整数为，同样接近取偶数：" + Math.rint(3.5));
+</code></pre>
 <h2 id="Random类"><a href="#Random类" class="headerlink" title="Random类"></a>Random类</h2><p>生成随机数</p>
-<pre class=" language-java"><code class="language-java">Random r <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Random</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//生成0-n之间随机整数</span>
-<span class="token keyword">int</span> p <span class="token operator">=</span> r<span class="token punctuation">.</span><span class="token function">nextInt</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//生成0-1之间随机double</span>
-<span class="token keyword">double</span> d1 <span class="token operator">=</span> r<span class="token punctuation">.</span><span class="token function">nextDouble</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//设置随机种子</span>
-r<span class="token punctuation">.</span><span class="token function">setSeed</span><span class="token punctuation">(</span>555L<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
-<h2 id="Data类"><a href="#Data类" class="headerlink" title="Data类"></a>Data类</h2><pre class=" language-java"><code class="language-java">Date d1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//以正常形式创建当前日期d1</span>
-<span class="token keyword">long</span> timeMillis <span class="token operator">=</span> System<span class="token punctuation">.</span><span class="token function">currentTimeMillis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//当前毫秒数</span>
-Date d2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>timeMillis<span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//以毫秒数创建d2</span>
-<span class="token keyword">long</span> value <span class="token operator">=</span> d2<span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//获取当前时间（毫秒）</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"日期"</span> <span class="token operator">+</span> d1<span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"毫秒数"</span> <span class="token operator">+</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-lang-java"><code class="language-lang-java">Random r = new Random();
+//生成0-n之间随机整数
+int p = r.nextInt(n);
+//生成0-1之间随机double
+double d1 = r.nextDouble();
+//设置随机种子
+r.setSeed(555L);
+</code></pre>
+<h2 id="Data类"><a href="#Data类" class="headerlink" title="Data类"></a>Data类</h2><pre class=" language-lang-java"><code class="language-lang-java">Date d1 = new Date();//以正常形式创建当前日期d1
+long timeMillis = System.currentTimeMillis();//当前毫秒数
+Date d2 = new Date(timeMillis);//以毫秒数创建d2
+long value = d2.getTime();//获取当前时间（毫秒）
+System.out.println("日期" + d1);
+System.out.println("毫秒数" + value);
+</code></pre>
 <p>输出结果为：</p>
-<pre class=" language-java"><code class="language-java">日期Sat Sep <span class="token number">12</span> <span class="token number">17</span><span class="token operator">:</span><span class="token number">17</span><span class="token operator">:</span><span class="token number">50</span> GMT<span class="token operator">+</span><span class="token number">08</span><span class="token operator">:</span><span class="token number">00</span> <span class="token number">2020</span>
-毫秒数<span class="token number">1599902270831</span></code></pre>
-<h3 id="SimpleDateFormat"><a href="#SimpleDateFormat" class="headerlink" title="SimpleDateFormat"></a>SimpleDateFormat</h3><pre class=" language-java"><code class="language-java">DateFormat df1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyy-MM-dd hh:mm:ss EE"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-DateFormat df2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">SimpleDateFormat</span><span class="token punctuation">(</span><span class="token string">"yyyy年MM月dd日"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-Date date <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"格式化输出日期1："</span> <span class="token operator">+</span> df1<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"格式化输出日期2："</span> <span class="token operator">+</span> df2<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>date<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-lang-java"><code class="language-lang-java">日期Sat Sep 12 17:17:50 GMT+08:00 2020
+毫秒数1599902270831
+</code></pre>
+<h3 id="SimpleDateFormat"><a href="#SimpleDateFormat" class="headerlink" title="SimpleDateFormat"></a>SimpleDateFormat</h3><pre class=" language-lang-java"><code class="language-lang-java">DateFormat df1 = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss EE");
+DateFormat df2 = new SimpleDateFormat("yyyy年MM月dd日");
+Date date = new Date();
+System.out.println("格式化输出日期1：" + df1.format(date));
+System.out.println("格式化输出日期2：" + df2.format(date));
+</code></pre>
 <p>输出结果为：</p>
-<pre class=" language-java"><code class="language-java">格式化输出日期<span class="token number">1</span>：<span class="token number">2020</span><span class="token operator">-</span><span class="token number">09</span><span class="token operator">-</span><span class="token number">12</span> <span class="token number">06</span><span class="token operator">:</span><span class="token number">37</span><span class="token operator">:</span><span class="token number">56</span> 星期六
-格式化输出日期<span class="token number">2</span>：<span class="token number">2020</span>年<span class="token number">09</span>月<span class="token number">12</span>日</code></pre>
-<h3 id="Calendar"><a href="#Calendar" class="headerlink" title="Calendar"></a>Calendar</h3><pre class=" language-java"><code class="language-java">Calendar c1 <span class="token operator">=</span> Calendar<span class="token punctuation">.</span><span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-c1<span class="token punctuation">.</span><span class="token function">setTime</span><span class="token punctuation">(</span>d1<span class="token punctuation">)</span><span class="token punctuation">;</span>         
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>d<span class="token punctuation">)</span><span class="token punctuation">;</span>
-System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>c1<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>YEAR<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"年"</span><span class="token operator">+</span><span class="token punctuation">(</span>c1<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>MONTH<span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"月"</span><span class="token operator">+</span>c1<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>Calendar<span class="token punctuation">.</span>DATE<span class="token punctuation">)</span><span class="token operator">+</span><span class="token string">"日"</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-lang-java"><code class="language-lang-java">格式化输出日期1：2020-09-12 06:37:56 星期六
+格式化输出日期2：2020年09月12日
+</code></pre>
+<h3 id="Calendar"><a href="#Calendar" class="headerlink" title="Calendar"></a>Calendar</h3><pre class=" language-lang-java"><code class="language-lang-java">Calendar c1 = Calendar.getInstance();
+c1.setTime(d1);         
+System.out.println(d);
+System.out.println(c1.get(Calendar.YEAR)+"年"+(c1.get(Calendar.MONTH)+1)+"月"+c1.get(Calendar.DATE)+"日");
+</code></pre>
 <p>输出结果为：2020年9月12日</p>
-<pre class=" language-java"><code class="language-java"></code></pre>
+<pre class=" language-lang-java"><code class="language-lang-java">
+
+</code></pre>
 <h2 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h2><h3 id="创建与删除"><a href="#创建与删除" class="headerlink" title="创建与删除"></a>创建与删除</h3><p>创建文件对象</p>
-<pre class=" language-java"><code class="language-java">File file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-lang-java"><code class="language-lang-java">File file = new File(filePath);
+</code></pre>
 <p>创建文件/文件夹</p>
-<pre class=" language-java"><code class="language-java">file<span class="token punctuation">.</span><span class="token function">createNewFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//文件</span>
-file<span class="token punctuation">.</span><span class="token function">mkdirs</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//文件夹</span></code></pre>
+<pre class=" language-lang-java"><code class="language-lang-java">file.createNewFile();//文件
+file.mkdirs();//文件夹
+</code></pre>
 <p>删除文件</p>
-<pre class=" language-java"><code class="language-java">file<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span></code></pre>
+<pre class=" language-lang-java"><code class="language-lang-java">file.delete();
+</code></pre>
 <p>递归删除文件夹</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">deleteDirectory</span><span class="token punctuation">(</span>String filePath<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        File file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>file<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">return</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+<pre class=" language-lang-java"><code class="language-lang-java">public static void deleteDirectory(String filePath){
+        File file = new File(filePath);
+        if(!file.exists()){
+            return;
+        }
 
-        <span class="token keyword">if</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            file<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>file<span class="token punctuation">.</span><span class="token function">isDirectory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            File<span class="token punctuation">[</span><span class="token punctuation">]</span> files <span class="token operator">=</span> file<span class="token punctuation">.</span><span class="token function">listFiles</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">for</span> <span class="token punctuation">(</span>File myfile <span class="token operator">:</span> files<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                <span class="token function">deleteDirectory</span><span class="token punctuation">(</span>filePath <span class="token operator">+</span> <span class="token string">"/"</span> <span class="token operator">+</span> myfile<span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
+        if(file.isFile()){
+            file.delete();
+        }else if(file.isDirectory()){
+            File[] files = file.listFiles();
+            for (File myfile : files) {
+                deleteDirectory(filePath + "/" + myfile.getName());
+            }
 
-            file<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+            file.delete();
+        }
+}
+</code></pre>
 <h3 id="读文件"><a href="#读文件" class="headerlink" title="读文件"></a>读文件</h3><p>字节为单位读取，用于二进制文件，如图片、影像、音频</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> String <span class="token function">readFileByBytes</span><span class="token punctuation">(</span>String filePath<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        File file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>file<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token operator">!</span>file<span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+<pre class=" language-lang-java"><code class="language-lang-java">public static String readFileByBytes(String filePath){
+        File file = new File(filePath);
+        if(!file.exists() || !file.isFile()){
+            return null;
+        }
 
-        StringBuffer content <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        StringBuffer content = new StringBuffer();
 
-        <span class="token keyword">try</span> <span class="token punctuation">{</span>
-            <span class="token keyword">byte</span><span class="token punctuation">[</span><span class="token punctuation">]</span> temp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            FileInputStream fileInputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">while</span><span class="token punctuation">(</span>fileInputStream<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                content<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                temp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">byte</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
+        try {
+            byte[] temp = new byte[1024];
+            FileInputStream fileInputStream = new FileInputStream(file);
+            while(fileInputStream.read(temp) != -1){
+                content.append(new String(temp));
+                temp = new byte[1024];
+            }
 
-            fileInputStream<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">FileNotFoundException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+            fileInputStream.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        <span class="token keyword">return</span> content<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+        return content.toString();
+}
+</code></pre>
 <p>以字符为单位读取文件，用于读文本，数字等类型文件，支持中文</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> String <span class="token function">readFileByChars</span><span class="token punctuation">(</span>String filePath<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        File file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>file<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token operator">!</span>file<span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+<pre class=" language-lang-java"><code class="language-lang-java">public static String readFileByChars(String filePath){
+        File file = new File(filePath);
+        if(!file.exists() || !file.isFile()){
+            return null;
+        }
 
-        StringBuffer content <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token punctuation">{</span>
-            <span class="token keyword">char</span><span class="token punctuation">[</span><span class="token punctuation">]</span> temp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">char</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            FileInputStream fileInputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            InputStreamReader inputStreamReader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span>fileInputStream<span class="token punctuation">,</span> <span class="token string">"GBK"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token keyword">while</span><span class="token punctuation">(</span>inputStreamReader<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span> <span class="token operator">!=</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-                content<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">String</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                temp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">char</span><span class="token punctuation">[</span><span class="token number">1024</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
+        StringBuffer content = new StringBuffer();
+        try {
+            char[] temp = new char[1024];
+            FileInputStream fileInputStream = new FileInputStream(file);
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, "GBK");
+            while(inputStreamReader.read(temp) != -1){
+                content.append(new String(temp));
+                temp = new char[1024];
+            }
 
-            fileInputStream<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            inputStreamReader<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">FileNotFoundException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+            fileInputStream.close();
+            inputStreamReader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        <span class="token keyword">return</span> content<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+        return content.toString();
+}
+</code></pre>
 <p>以行为单位读取文件，用于读面向行的格式化文件</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> List<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">readFileByLines</span><span class="token punctuation">(</span>String filePath<span class="token punctuation">)</span><span class="token punctuation">{</span>
-        File file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">!</span>file<span class="token punctuation">.</span><span class="token function">exists</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">||</span> <span class="token operator">!</span>file<span class="token punctuation">.</span><span class="token function">isFile</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token keyword">return</span> null<span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+<pre class=" language-lang-java"><code class="language-lang-java">public static List<String> readFileByLines(String filePath){
+        File file = new File(filePath);
+        if(!file.exists() || !file.isFile()){
+            return null;
+        }
 
-        List<span class="token operator">&lt;</span>String<span class="token operator">></span> content <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>String<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">try</span> <span class="token punctuation">{</span>
-            FileInputStream fileInputStream <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileInputStream</span><span class="token punctuation">(</span>file<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            InputStreamReader inputStreamReader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">InputStreamReader</span><span class="token punctuation">(</span>fileInputStream<span class="token punctuation">,</span> <span class="token string">"GBK"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            BufferedReader reader <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedReader</span><span class="token punctuation">(</span>inputStreamReader<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            String lineContent <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">;</span>
-            <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>lineContent <span class="token operator">=</span> reader<span class="token punctuation">.</span><span class="token function">readLine</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">!=</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                content<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>lineContent<span class="token punctuation">)</span><span class="token punctuation">;</span>
-                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>lineContent<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            <span class="token punctuation">}</span>
+        List<String> content = new ArrayList<String>();
+        try {
+            FileInputStream fileInputStream = new FileInputStream(file);
+            InputStreamReader inputStreamReader = new InputStreamReader(fileInputStream, "GBK");
+            BufferedReader reader = new BufferedReader(inputStreamReader);
+            String lineContent = "";
+            while ((lineContent = reader.readLine()) != null) {
+                content.add(lineContent);
+                System.out.println(lineContent);
+            }
 
-            fileInputStream<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            inputStreamReader<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            reader<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">FileNotFoundException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span> <span class="token keyword">catch</span> <span class="token punctuation">(</span><span class="token class-name">IOException</span> e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
+            fileInputStream.close();
+            inputStreamReader.close();
+            reader.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        <span class="token keyword">return</span> content<span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+        return content;
+}
+</code></pre>
 <h3 id="写文件"><a href="#写文件" class="headerlink" title="写文件"></a>写文件</h3><p>FileWriter</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">writeFileByFileWriter</span><span class="token punctuation">(</span>String filePath<span class="token punctuation">,</span> String content<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException<span class="token punctuation">{</span>
-        File file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">synchronized</span> <span class="token punctuation">(</span>file<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            FileWriter fw <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileWriter</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            fw<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>content<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            fw<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<pre class=" language-lang-java"><code class="language-lang-java">public static void writeFileByFileWriter(String filePath, String content) throws IOException{
+        File file = new File(filePath);
+        synchronized (file) {
+            FileWriter fw = new FileWriter(filePath);
+            fw.write(content);
+            fw.close();
+        }
+}
+</code></pre>
 <p>BufferedOutputStream</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">writeFileByBufferedOutputStream</span><span class="token punctuation">(</span>String filePath<span class="token punctuation">,</span> String content<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException<span class="token punctuation">{</span>
-        File file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">synchronized</span> <span class="token punctuation">(</span>file<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            BufferedOutputStream fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">BufferedOutputStream</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>content<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"GBK"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            fos<span class="token punctuation">.</span><span class="token function">flush</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            fos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<pre class=" language-lang-java"><code class="language-lang-java">public static void writeFileByBufferedOutputStream(String filePath, String content) throws IOException{
+        File file = new File(filePath);
+        synchronized (file) {
+            BufferedOutputStream fos = new BufferedOutputStream(new FileOutputStream(filePath));
+            fos.write(content.getBytes("GBK"));
+            fos.flush();
+            fos.close();
+        }
+}
+</code></pre>
 <p>FileOutputStream</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">writeFileByFileOutputStream</span><span class="token punctuation">(</span>String filePath<span class="token punctuation">,</span> String content<span class="token punctuation">)</span> <span class="token keyword">throws</span> IOException<span class="token punctuation">{</span>
-        File file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">synchronized</span> <span class="token punctuation">(</span>file<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            FileOutputStream fos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">FileOutputStream</span><span class="token punctuation">(</span>filePath<span class="token punctuation">)</span><span class="token punctuation">;</span>
-            fos<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>content<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token string">"GBK"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-            fos<span class="token punctuation">.</span><span class="token function">close</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<pre class=" language-lang-java"><code class="language-lang-java">public static void writeFileByFileOutputStream(String filePath, String content) throws IOException{
+        File file = new File(filePath);
+        synchronized (file) {
+            FileOutputStream fos = new FileOutputStream(filePath);
+            fos.write(content.getBytes("GBK"));
+            fos.close();
+        }
+}
+</code></pre>
 <h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><p>将基本类型转换为面向对象，类名为Byte，Boolean，Short，Character，Integer，Long，Float，Double。</p>
-<pre class=" language-java"><code class="language-java">String s <span class="token operator">=</span> <span class="token string">"123"</span><span class="token punctuation">;</span>
-<span class="token keyword">int</span> n <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//将字符串"120"按照十进制转换为int,则结果为120</span>
-<span class="token keyword">int</span> n <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"120"</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//将字符串"12"按照十六进制转换为int,则结果为18</span>
-<span class="token keyword">int</span> n <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"12"</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//将字符串"ff"按照十六进制转换为int,则结果为255</span>
-<span class="token keyword">int</span> n <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span><span class="token string">"ff"</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class=" language-lang-java"><code class="language-lang-java">String s = "123";
+int n = Integer.parseInt(s);
+//将字符串"120"按照十进制转换为int,则结果为120
+int n = Integer.parseInt("120",10);
+//将字符串"12"按照十六进制转换为int,则结果为18
+int n = Integer.parseInt("12",16);
+//将字符串"ff"按照十六进制转换为int,则结果为255
+int n = Integer.parseInt("ff",16);
 
-<span class="token keyword">int</span> m <span class="token operator">=</span> <span class="token number">1000</span><span class="token punctuation">;</span>
-String s <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">//将int值转换为特定进制的字符串</span></code></pre>
+int m = 1000;
+String s = Integer.toString(m);
+//将int值转换为特定进制的字符串
+</code></pre>
 <h2 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h2><p>不可变性</p>
 <h2 id="可变String"><a href="#可变String" class="headerlink" title="可变String"></a>可变String</h2><p>StringBuffer多线程数据量较大/StringBuilder(效率高，不安全)单线程数据量较大</p>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>
-    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String args<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        StringBuffer sBuffer <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">StringBuffer</span><span class="token punctuation">(</span><span class="token string">"first"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        sBuffer<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span><span class="token string">"second"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sBuffer<span class="token punctuation">)</span><span class="token punctuation">;</span>  
-        sBuffer<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sBuffer<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-        sBuffer<span class="token punctuation">.</span><span class="token function">reverse</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>sBuffer<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span></code></pre>
+<pre class=" language-lang-java"><code class="language-lang-java">public class Test{
+    public static void main(String args[]){
+        StringBuffer sBuffer = new StringBuffer("first");
+        sBuffer.append("second");
+        System.out.println(sBuffer);  
+        sBuffer.delete(1,3);
+        System.out.println(sBuffer); 
+        sBuffer.reverse()
+        System.out.println(sBuffer); 
+    }
+}
+</code></pre>
 
             </div>
             <hr/>
@@ -957,7 +978,8 @@ String s <span class="token operator">=</span> Integer<span class="token punctua
                             Git基本使用必要配置查看当前项目下的配置git config -l  #查看所有配置
 git config --system -l #查看系统配置
 git config --global --list #查看用户配置
-配置用户变量git 
+
+配置用户变量git
                         
                     </div>
                     <div class="publish-info">
