@@ -6,7 +6,7 @@
   <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/atom.xml" rel="self"/>
   
   <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/"/>
-  <updated>2020-09-26T09:29:41.551Z</updated>
+  <updated>2020-09-26T13:57:12.623Z</updated>
   <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Model-Based协同过滤算法</title>
+    <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/26/model-based-xie-tong-guo-lu-suan-fa/"/>
+    <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/26/model-based-xie-tong-guo-lu-suan-fa/</id>
+    <published>2020-09-26T13:46:08.000Z</published>
+    <updated>2020-09-26T13:57:12.623Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Model-Based协同过滤算法&quot;&gt;&lt;a href=&quot;#Model-Based协同过滤算法&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="推荐系统" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
+    
+    
+    <category term="Model-Based协同过滤算法" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/Model-Based%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>基于内容的推荐</title>
     <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/26/ji-yu-nei-rong-de-tui-jian/"/>
     <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/26/ji-yu-nei-rong-de-tui-jian/</id>
     <published>2020-09-26T09:00:26.000Z</published>
-    <updated>2020-09-26T09:29:41.551Z</updated>
+    <updated>2020-09-26T13:48:01.045Z</updated>
     
     
       
@@ -37,7 +62,7 @@
     <category term="推荐系统" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
     
     
-    <category term="基于内容的推荐" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/%E5%9F%BA%E4%BA%8E%E5%86%85%E5%AE%B9%E7%9A%84%E6%8E%A8%E8%8D%90/"/>
+    <category term="Memory-Based推荐算法" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/Memory-Based%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
@@ -71,7 +96,7 @@
     <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/15/tui-jian-suan-fa-xie-tong-guo-lu/"/>
     <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/15/tui-jian-suan-fa-xie-tong-guo-lu/</id>
     <published>2020-09-15T13:54:27.000Z</published>
-    <updated>2020-09-26T08:42:30.656Z</updated>
+    <updated>2020-09-26T13:48:04.110Z</updated>
     
     
       
@@ -87,7 +112,7 @@
     <category term="推荐系统" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/"/>
     
     
-    <category term="推荐算法" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/"/>
+    <category term="Memory-Based推荐算法" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/Memory-Based%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
