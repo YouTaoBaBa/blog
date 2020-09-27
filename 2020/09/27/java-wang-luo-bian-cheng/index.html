@@ -537,6 +537,7 @@ String msg = "你好";
 DatagramSocket socket = new DatagramSocket();
 DatagramPacket packet = new DatagramPacket(msg.getBytes(),0,(msg.getBytes().length,localhost,port);
 socket.send(packet);
+socket.close();
 </code></pre>
 
             </div>
