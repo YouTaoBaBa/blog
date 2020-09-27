@@ -539,6 +539,40 @@ DatagramPacket packet = new DatagramPacket(msg.getBytes(),0,(msg.getBytes().leng
 socket.send(packet);
 socket.close();
 </code></pre>
+<h2 id="URL下载网络资源"><a href="#URL下载网络资源" class="headerlink" title="URL下载网络资源"></a>URL下载网络资源</h2><pre class=" language-lang-java"><code class="language-lang-java">package com.youtao;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+
+public class URLDemo {
+    public static void main(String[] args) throws IOException {
+        URL url = new URL("https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9mMDZjNzU2NS0wZjg0LTQzNmItOGVlNy1hY2Y2ZjliN2VjMDIucG5n?x-oss-process=image/format,png");
+        System.out.println(url.getProtocol());//协议
+        System.out.println(url.getHost());//主机
+        System.out.println(url.getPort());//端口
+        System.out.println(url.getPath());//文件地址
+        System.out.println(url.getFile());//文件全路径
+        System.out.println(url.getQuery());//参数
+        //连接
+        HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
+        InputStream inputStream = urlConnection.getInputStream();
+        FileOutputStream fileOutputStream = new FileOutputStream("112.png");
+        byte[] buffer = new byte[1024];
+        int len;
+        while ((len=inputStream.read(buffer))!=-1){
+            fileOutputStream.write(buffer,0,len);
+        }
+        fileOutputStream.close();
+        inputStream.close();
+        urlConnection.disconnect();
+    }
+}
+</code></pre>
 
             </div>
             <hr/>
@@ -1127,7 +1161,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">6.5k</span>&nbsp;字
+                class="white-color">6.7k</span>&nbsp;字
             
             
             
