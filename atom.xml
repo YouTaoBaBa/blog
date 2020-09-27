@@ -6,7 +6,7 @@
   <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/atom.xml" rel="self"/>
   
   <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/"/>
-  <updated>2020-09-27T11:19:52.680Z</updated>
+  <updated>2020-09-27T11:59:24.152Z</updated>
   <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>注解与反射</title>
+    <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/27/zhu-jie-yu-fan-she/"/>
+    <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/27/zhu-jie-yu-fan-she/</id>
+    <published>2020-09-27T11:22:57.000Z</published>
+    <updated>2020-09-27T11:59:24.152Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;注解与反射&quot;&gt;&lt;a href=&quot;#注解与反射&quot; class=&quot;headerlink&quot; title=&quot;注解与反射&quot;&gt;&lt;/a&gt;注解与反射&lt;/h1&gt;&lt;h2 id=&quot;注解的作用&quot;&gt;&lt;a href=&quot;#注解的作用&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="java" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/java/"/>
+    
+    
+    <category term="注解与反射" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/%E6%B3%A8%E8%A7%A3%E4%B8%8E%E5%8F%8D%E5%B0%84/"/>
+    
+  </entry>
   
   <entry>
     <title>java网络编程</title>

@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>注解与反射</title>
+      <link href="/2020/09/27/zhu-jie-yu-fan-she/"/>
+      <url>/2020/09/27/zhu-jie-yu-fan-she/</url>
+      
+        <content type="html"><![CDATA[<h1 id="注解与反射"><a href="#注解与反射" class="headerlink" title="注解与反射"></a>注解与反射</h1><h2 id="注解的作用"><a href="#注解的作用" class="headerlink" title="注解的作用"></a>注解的作用</h2><ul><li>不是程序本身，可以对程序作出解释</li><li>可以被其他程序（比如：编译器）读取。<h2 id="注解的格式"><a href="#注解的格式" class="headerlink" title="注解的格式"></a>注解的格式</h2>@注解名（参数）如：</li><li>重写：@Override、函数式接口@FunctionalInterface</li><li>带参例子：@SuppressWarnings(value=”unchecked”)<h2 id="在哪使用"><a href="#在哪使用" class="headerlink" title="在哪使用"></a>在哪使用</h2>package,class,method,field等上面，相当于给他们添加了额外的辅助信息，可以通过反射机制编程实现对这些元数据的访问。</li></ul><h2 id="内置注解"><a href="#内置注解" class="headerlink" title="内置注解"></a>内置注解</h2><ul><li>@Override：重写；</li><li>@Deprecated：不鼓励程序员使用，或者使用更好的方式，弃用的；</li><li>@SuppressWarnings(“all”)：抑制编译时候带来的warning信息。</li></ul><h2 id="元注解"><a href="#元注解" class="headerlink" title="元注解"></a>元注解</h2><p>注解其他注解的注解</p><ul><li>@Target：用于描述注解的适用范围（即：被描述的注解可以用在什么地方）</li><li>@Retention：表示需要在什么级别保存该注释信息，用于描述注解的生命周期（SOURCE&lt;CLASS&lt;RUNTIME）</li><li>@Document:说明该注解将被包含在javadoc中</li><li>@Inherited:表示子类可以继承父类的注解</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> java </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 注解与反射 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>java网络编程</title>
       <link href="/2020/09/27/java-wang-luo-bian-cheng/"/>
       <url>/2020/09/27/java-wang-luo-bian-cheng/</url>
