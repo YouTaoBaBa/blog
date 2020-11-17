@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="java网络编程, YouTaoBlog">
+    <meta name="keywords" content="CascadePSP, YouTaoBlog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>java网络编程 | YouTaoBlog</title>
+    <title>CascadePSP | YouTaoBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -180,12 +180,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/2.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/15.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">java网络编程</h1>
+                    <h1 class="description center-align post-title">CascadePSP</h1>
                 </div>
             </div>
         </div>
@@ -302,8 +302,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
-                                <span class="chip bg-color">java网络编程</span>
+                            <a href="/tags/%E8%B6%85%E5%88%86%E8%BE%A8%E7%8E%87%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/">
+                                <span class="chip bg-color">超分辨率语义分割</span>
                             </a>
                         
                     </div>
@@ -314,8 +314,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/java/" class="post-category">
-                                java
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -327,7 +327,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-27
+                    2020-11-17
                 </div>
                 
 
@@ -348,188 +348,26 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="网络处理"><a href="#网络处理" class="headerlink" title="网络处理"></a>网络处理</h1><h2 id="TCP聊天"><a href="#TCP聊天" class="headerlink" title="TCP聊天"></a>TCP聊天</h2><h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><pre class=" language-lang-java"><code class="language-lang-java">package com.youtao;
-
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.InetAddress;
-import java.net.InetSocketAddress;
-import java.net.Socket;
-
-public class Client {
-    public static void main(String[] args) {
-        Socket socket = null;
-        OutputStream os = null;
-        try{
-            InetAddress serverIP = InetAddress.getByName("127.0.0.1");
-            int port = 9999;
-            socket = new Socket(serverIP,port);
-            os = socket.getOutputStream();
-            os.write("66666".getBytes());
-        }catch (Exception e){
-            e.printStackTrace();
-        }finally {
-            if (os != null) {
-                try {
-                    os.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (socket != null) {
-                try {
-                    socket.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }
-}
-</code></pre>
-<h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><pre class=" language-lang-java"><code class="language-lang-java">package com.youtao;
-
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
-
-public class Server {
-    public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = null;
-        Socket socket = null;
-        InputStream is = null;
-        ByteArrayOutputStream baos = null;
-        try{
-            serverSocket = new ServerSocket(9999);
-            while (true){
-                socket = serverSocket.accept();
-                is = socket.getInputStream();
-                baos = new ByteArrayOutputStream();
-                byte[] buffer = new byte[1024];
-                int len;
-                while((len=is.read(buffer))!=-1){
-                    baos.write(buffer,0,len);
-                }
-                System.out.println(baos.toString());
-            }
-        }catch (IOException e){
-            System.out.println(e.toString());
-        }finally {
-            if (baos != null) {
-                baos.close();
-            }
-            if (is != null) {
-                is.close();
-            }
-            if (socket != null) {
-                socket.close();
-            }
-            if (serverSocket != null) {
-                serverSocket.close();
-            }
-        }
-    }
-}
-</code></pre>
-<h2 id="上传文件"><a href="#上传文件" class="headerlink" title="上传文件"></a>上传文件</h2><h3 id="服务器"><a href="#服务器" class="headerlink" title="服务器"></a>服务器</h3><pre class=" language-lang-java"><code class="language-lang-java">package com.youtao;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.ServerSocket;
-import java.net.Socket;
-
-public class FileAccept {
-    public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(9000);
-        Socket socket = serverSocket.accept();
-        InputStream is = socket.getInputStream();
-        FileOutputStream fos = new FileOutputStream(new File("receive.jpg"));
-        byte[] buffer = new byte[100000];
-        int len;
-        while((len=is.read(buffer))!=-1) {
-            fos.write(buffer, 0, len);
-        }
-        fos.close();
-        is.close();
-        socket.close();
-        serverSocket.close();
-    }
-}
-</code></pre>
-<h3 id="客户端-1"><a href="#客户端-1" class="headerlink" title="客户端"></a>客户端</h3><pre class=" language-lang-java"><code class="language-lang-java">package com.youtao;
-
-import com.sun.org.apache.xml.internal.serializer.OutputPropertyUtils;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.InetAddress;
-import java.net.Socket;
-
-public class FileUpload {
-    public static void main(String[] args) throws IOException {
-        Socket socket = new Socket(InetAddress.getByName("127.0.0.1"),9000);
-        OutputStream os = socket.getOutputStream();
-        FileInputStream fis = new FileInputStream(new File("111.jpg"));
-        byte[] buffer = new byte[100000];
-        int len;
-        while((len=fis.read(buffer))!=-1){
-            os.write(buffer,0,len);
-        }
-        fis.close();
-        os.close();
-        socket.close();
-    }
-}
-</code></pre>
-<h2 id="UDP发送"><a href="#UDP发送" class="headerlink" title="UDP发送"></a>UDP发送</h2><pre class=" language-lang-java"><code class="language-lang-java">InetAddress localhost = InetAddress.getByName("localhost");
-int port = 9999;
-String msg = "你好";
-DatagramSocket socket = new DatagramSocket();
-DatagramPacket packet = new DatagramPacket(msg.getBytes(),0,(msg.getBytes().length,localhost,port);
-socket.send(packet);
-socket.close();
-</code></pre>
-<h2 id="URL下载网络资源"><a href="#URL下载网络资源" class="headerlink" title="URL下载网络资源"></a>URL下载网络资源</h2><pre class=" language-lang-java"><code class="language-lang-java">package com.youtao;
-
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.net.URLConnection;
-
-public class URLDemo {
-    public static void main(String[] args) throws IOException {
-        URL url = new URL("https://imgconvert.csdnimg.cn/aHR0cHM6Ly9pbWdrci5jbi1iai51ZmlsZW9zLmNvbS9mMDZjNzU2NS0wZjg0LTQzNmItOGVlNy1hY2Y2ZjliN2VjMDIucG5n?x-oss-process=image/format,png");
-        System.out.println(url.getProtocol());//协议
-        System.out.println(url.getHost());//主机
-        System.out.println(url.getPort());//端口
-        System.out.println(url.getPath());//文件地址
-        System.out.println(url.getFile());//文件全路径
-        System.out.println(url.getQuery());//参数
-        //连接
-        HttpURLConnection urlConnection = (HttpURLConnection)url.openConnection();
-        InputStream inputStream = urlConnection.getInputStream();
-        FileOutputStream fileOutputStream = new FileOutputStream("112.png");
-        byte[] buffer = new byte[1024];
-        int len;
-        while ((len=inputStream.read(buffer))!=-1){
-            fileOutputStream.write(buffer,0,len);
-        }
-        fileOutputStream.close();
-        inputStream.close();
-        urlConnection.disconnect();
-    }
-}
-</code></pre>
-
+                <h1 id="CascadePSP-Toward-Class-Agnostic-and-Very-High-Resolution-Segmentation-via-Global-and-Local-Refinement"><a href="#CascadePSP-Toward-Class-Agnostic-and-Very-High-Resolution-Segmentation-via-Global-and-Local-Refinement" class="headerlink" title="CascadePSP: Toward Class-Agnostic and Very High-Resolution Segmentation via Global and Local Refinement"></a>CascadePSP: Toward Class-Agnostic and Very High-Resolution Segmentation via Global and Local Refinement</h1><p>通过全局和局部细化实现类不可知和非常高分辨率的分割</p>
+<p><a href="https://arxiv.org/abs/2005.02551" target="_blank" rel="noopener">论文地址</a></p>
+<p><a href="https://github.com/hkchengrex/CascadePSP" target="_blank" rel="noopener">代码地址</a></p>
+<h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><ul>
+<li>语义分割一般只训练固定分辨率范围内的图像，通过对低分辨率图像上采样得到高分辨率图像是不足以描述高分辨率图像细节的。</li>
+<li>受限于显存，低分辨率的模型没法推广到高分辨率情况</li>
+<li>超分辨率图像标注难以获取</li>
+<li>目前的超分图分割主要方法包括下采样和裁剪，下采样方法消除了细节信息，裁剪方法破坏了图像块之间的上下文信息</li>
+</ul>
+<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<li>提出了CascadePSP，这是一种通用的级联分割细化模型，它可以细化任何给定的输入分割，在不进行微调的情况下提高先进分割模型的性能。</li>
+<li>证明了该方法可以产生高质量和高分辨率的分割，这是以前基于深度学习的方法所不能实现的。</li>
+<li>做了个数据集，叫BIG dataset，有50个验证和100个测试，它可以作为一个精确的评价数据集用于非常高分辨率的语义图像分割任务。</li>
+</ul>
+<h2 id="Related-Works"><a href="#Related-Works" class="headerlink" title="Related Works"></a>Related Works</h2><h3 id="语义分割"><a href="#语义分割" class="headerlink" title="语义分割"></a>语义分割</h3><p>全卷积网络（FCN），通过自下而上的，带有广视野的上下文信息</p>
+<p>特征金字塔（PSP），使用不同尺度的图像、或者是源于空间池化、拓展卷积等获得的不同感受野特征</p>
+<p>编码器解码器（Encoder-Decoder），先减少维度捕获高级语义，然后使用解码器回复空间范围，再加上跳跃链接获得更清晰的边界。</p>
+<h3 id="细化分割"><a href="#细化分割" class="headerlink" title="细化分割"></a>细化分割</h3><p>基于FCN的方法通常不会产生高质量的分割。研究人员已经用图结构模型解决了这个问题，如条件随机场（CRF）或区域生长。它们通常坚持低层次的颜色边界，而没有充分利用高级语义信息，并且不能修复较大的错误区域。由于计算和内存的限制，基于传播的方法不能处理非常高分辨率的数据。单独的细分模块也被用于提高边界精度，他们的模型接受的是端到端的训练，这种方法的模型，使用大模型容易出现过拟合，而浅层优化网络的优化能力有限。</p>
+<h3 id="级联网络"><a href="#级联网络" class="headerlink" title="级联网络"></a>级联网络</h3><p>多尺度分析在许多计算机视觉任务中同时利用了大尺度和小尺度特征，如边缘检测、目标检测和分割。特别是，有许多方法在每个阶段预测独立的结果，并将它们合并以获得多尺度信息。我们的方法不仅从粗糙的尺度中融合特征，而且使用它们作为下一个更精细的层次的输入之一。文章证明，添加粗的输出作为下一层的输入并不会改变系统模型，因此同样的网络可以递归地用于更高分辨率的细化。</p>
+<h2 id="CascadePSP"><a href="#CascadePSP" class="headerlink" title="CascadePSP"></a>CascadePSP</h2>
             </div>
             <hr/>
 
@@ -554,7 +392,7 @@ public class URLDemo {
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/27/java-wang-luo-bian-cheng/">https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/27/java-wang-luo-bian-cheng/</a>
+                    <a href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/17/cascadepsp/">https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/17/cascadepsp/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -592,8 +430,8 @@ public class URLDemo {
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
-                                    <span class="chip bg-color">java网络编程</span>
+                                <a href="/tags/%E8%B6%85%E5%88%86%E8%BE%A8%E7%8E%87%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/">
+                                    <span class="chip bg-color">超分辨率语义分割</span>
                                 </a>
                             
                         </div>
@@ -807,50 +645,48 @@ public class URLDemo {
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/09/27/zhu-jie-yu-fan-she/">
+                <a href="/2020/11/17/cascadepsp/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="注解与反射">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="CascadePSP">
                         
-                        <span class="card-title">注解与反射</span>
+                        <span class="card-title">CascadePSP</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            注解注解的作用
-不是程序本身，可以对程序作出解释
-可以被其他程序（比如：编译器）读取。注解的格式@注解名（参数）如：
-重写：@Override、函数式接口@FunctionalInterface
-带参例子：@SuppressWarnings
+                            CascadePSP: Toward Class-Agnostic and Very High-Resolution Segmentation via Global and Local Refinement通过全局和局部细化实现类不可知和非
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-17
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java/" class="post-category">
-                                    java
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%B3%A8%E8%A7%A3%E4%B8%8E%E5%8F%8D%E5%B0%84/">
-                        <span class="chip bg-color">注解与反射</span>
+                    <a href="/tags/%E8%B6%85%E5%88%86%E8%BE%A8%E7%8E%87%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/">
+                        <span class="chip bg-color">超分辨率语义分割</span>
                     </a>
                     
                 </div>
@@ -864,39 +700,35 @@ public class URLDemo {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/26/model-based-xie-tong-guo-lu-suan-fa/">
+                <a href="/2020/10/18/mysql-yu-fa-ji-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="Model-Based协同过滤算法">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="mysql语法记录">
                         
-                        <span class="card-title">Model-Based协同过滤算法</span>
+                        <span class="card-title">mysql语法记录</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Model-Based协同过滤算法
-基于分类算法、回归算法、聚类算法
-基于矩阵分解的推荐
-基于神经网络
-基于图模型
-
-Baseline这个用户或物品普遍高于或低于平均值的差值，成为偏差（bias）。
-目标
-找出每个用户普遍高于或低于他人的偏
+                            MySQL语法show databases; --查看数据库
+use school; --切换到school数据库
+show tables; --查看数据表
+describe student;--显示数据库中，表的信息,表结构
+desc s
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-10-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/" class="post-category">
-                                    推荐系统
+                            <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/" class="post-category">
+                                    数据库
                                 </a>
                             
                             
@@ -906,8 +738,8 @@ Baseline这个用户或物品普遍高于或低于平均值的差值，成为偏
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Model-Based%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">Model-Based协同过滤算法</span>
+                    <a href="/tags/mysql%E8%AF%AD%E6%B3%95/">
+                        <span class="chip bg-color">mysql语法</span>
                     </a>
                     
                 </div>

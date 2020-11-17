@@ -6,7 +6,7 @@
   <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/atom.xml" rel="self"/>
   
   <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/"/>
-  <updated>2020-10-20T06:19:22.925Z</updated>
+  <updated>2020-11-17T11:50:26.409Z</updated>
   <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CascadePSP</title>
+    <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/17/cascadepsp/"/>
+    <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/17/cascadepsp/</id>
+    <published>2020-11-17T10:58:32.000Z</published>
+    <updated>2020-11-17T11:50:26.409Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;CascadePSP-Toward-Class-Agnostic-and-Very-High-Resolution-Segmentation-via-Global-and-Local-Refinement&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="超分辨率语义分割" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/%E8%B6%85%E5%88%86%E8%BE%A8%E7%8E%87%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
+    
+  </entry>
   
   <entry>
     <title>mysql语法记录</title>
@@ -312,31 +337,6 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/hello-world/"/>
-    <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/hello-world/</id>
-    <published>2020-09-10T08:41:52.000Z</published>
-    <updated>2020-09-10T13:57:53.984Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="blog相关" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/blog%E7%9B%B8%E5%85%B3/"/>
-    
-    
-    <category term="第一次配置完成Hexo" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%88%90Hexo/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Markdown基本语法</title>
     <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/markdown-ji-ben-yu-fa/"/>
     <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/markdown-ji-ben-yu-fa/</id>
@@ -358,6 +358,31 @@
     
     
     <category term="blog书写" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/blog%E4%B9%A6%E5%86%99/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/hello-world/"/>
+    <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/10/hello-world/</id>
+    <published>2020-09-10T08:41:52.000Z</published>
+    <updated>2020-09-10T13:57:53.984Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="blog相关" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/blog%E7%9B%B8%E5%85%B3/"/>
+    
+    
+    <category term="第一次配置完成Hexo" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/%E7%AC%AC%E4%B8%80%E6%AC%A1%E9%85%8D%E7%BD%AE%E5%AE%8C%E6%88%90Hexo/"/>
     
   </entry>
   
