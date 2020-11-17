@@ -367,8 +367,14 @@
 <p>编码器解码器（Encoder-Decoder），先减少维度捕获高级语义，然后使用解码器回复空间范围，再加上跳跃链接获得更清晰的边界。</p>
 <h3 id="细化分割"><a href="#细化分割" class="headerlink" title="细化分割"></a>细化分割</h3><p>基于FCN的方法通常不会产生高质量的分割。研究人员已经用图结构模型解决了这个问题，如条件随机场（CRF）或区域生长。它们通常坚持低层次的颜色边界，而没有充分利用高级语义信息，并且不能修复较大的错误区域。由于计算和内存的限制，基于传播的方法不能处理非常高分辨率的数据。单独的细分模块也被用于提高边界精度，他们的模型接受的是端到端的训练，这种方法的模型，使用大模型容易出现过拟合，而浅层优化网络的优化能力有限。</p>
 <h3 id="级联网络"><a href="#级联网络" class="headerlink" title="级联网络"></a>级联网络</h3><p>多尺度分析在许多计算机视觉任务中同时利用了大尺度和小尺度特征，如边缘检测、目标检测和分割。特别是，有许多方法在每个阶段预测独立的结果，并将它们合并以获得多尺度信息。我们的方法不仅从粗糙的尺度中融合特征，而且使用它们作为下一个更精细的层次的输入之一。文章证明，添加粗的输出作为下一层的输入并不会改变系统模型，因此同样的网络可以递归地用于更高分辨率的细化。</p>
-<h2 id="CascadePSP"><a href="#CascadePSP" class="headerlink" title="CascadePSP"></a>CascadePSP</h2><h3 id="细分模型"><a href="#细分模型" class="headerlink" title="细分模型"></a>细分模型</h3><p><img src="1.png" alt=""></p>
-
+<h2 id="CascadePSP"><a href="#CascadePSP" class="headerlink" title="CascadePSP"></a>CascadePSP</h2><h3 id="细分模型"><a href="#细分模型" class="headerlink" title="细分模型"></a>细分模型</h3><h4 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h4><p><img src="1.png" alt=""></p>
+<p>单个细分模块如图所示，细分模块用不同的比例拍摄图像和多个不完美的分割mask来生成精确的分割。 多尺度输入使模型能够捕获不同层次的结构和边界信息，使网络能够学习自适应地融合不同尺度的mask特征，在最精细的层次上完善分割。</p>
+<p>所有较低分辨率的输入分割均被双线性上采样为相同大小，并与RGB图像连接在一起。使用ResNet-50作为主干网络的PSPNet来从输入中提取步长为8的特征图。其中金字塔池化大小为[1,2,3,6]，这有助于捕获全局上下文。除了最终的OS 1输出之外，模型还生成了1/8和1/4的分割结果，并跳过1/2来提供纠正局部错误边界的灵活性。</p>
+<p>为了重建在提取过程中丢失的像素级图像细节，采用了来自主干网络的跳跃连接，并使用上采样模块融合了特征。将skip分支的特征和来自主干分支的双线性上采样的特征连接起来，并使用两个ResNet块对其进行处理。使用2层1×1conv生成分割输出，然后进行sigmoid函数激活。</p>
+<h4 id="Loss"><a href="#Loss" class="headerlink" title="Loss"></a>Loss</h4><p>对于较粗糙的OS 8，使用交叉熵损失，对于较精细的OS 1，使用L1 + L2损失，对于OS 4，使用交叉熵和L1 + L2损失的平均值，可以得出最佳结果。为了进行更好的边界细化，在OS 1上还采用了<strong>分段梯度幅度上的L1损失</strong>。分割梯度由一个3×3均值滤波器和Sobel算子组成。</p>
+<script type="math/tex; mode=display">
+\mathcal{L}_{g r a d}=\alpha \cdot \frac{1}{n} \sum_{i}\left\|\nabla\left(f_{m}\left(x_{i}\right)\right)-\nabla\left(f_{m}\left(y_{i}\right)\right)\right\|_{1}</script><script type="math/tex; mode=display">
+\mathcal{L}=\mathcal{L}_{C E}^{8}+\frac{1}{2}\left(\mathcal{L}_{L 1+L 2}^{4}+\mathcal{L}_{C E}^{4}\right)+\mathcal{L}_{L 1+L 2}^{1}+\mathcal{L}_{g r a d}^{1}​</script>
             </div>
             <hr/>
 
@@ -879,6 +885,13 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 
 
     <footer class="page-footer bg-color">
@@ -947,7 +960,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">8.7k</span>&nbsp;字
+                class="white-color">9.2k</span>&nbsp;字
             
             
             
