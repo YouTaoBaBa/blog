@@ -379,10 +379,30 @@
 <p>评估方法使用标准分割度量IoU。为了突出边界精度的感性重要性，文章提出了一种新的平均边界精度度量(mBA)。为了对不同大小的图像进行鲁棒估计，我们在半径为[3,w+h 300]中进行均匀采5个样本，在真值边界内的每个半径范围内计算分割精度，然后对这些值进行平均。表1显示，文章提出的模型在IoU方面取得了最显著的改进，在边界精度方面甚至更显著。</p>
 <p>通过多级级联，模块可以将不同的细化阶段委托给不同的规模。如图3所示，这个3级模型使用了中间的小规模分段来更好地捕获对象结构。尽管模型有着相同的感受野，但3级模型相比于1级模型可以更好地利用结构线索产生更详细的分割。</p>
 <h3 id="Global-and-Local-Cascade-Refinement"><a href="#Global-and-Local-Cascade-Refinement" class="headerlink" title="Global and Local Cascade Refinement"></a>Global and Local Cascade Refinement</h3><p>在测试中，使用全局步骤和局部步骤通过采用相同的优化模块来执行高分辨率分割优化。具体来说，“全局”步骤考虑将整个调整大小后的图像用于修复结构，而“局部”步骤则使用图像裁剪以全分辨率优化细节。可以将相同的优化模块递归用于更高分辨率的优化。</p>
-<p><img src="3.png" alt=""></p>
+<h4 id="Global-Step"><a href="#Global-Step" class="headerlink" title="Global Step"></a>Global Step</h4><p><img src="3.png" alt=""></p>
 <p>图4详细介绍了Global步骤的设计，该步骤使用3级级联优化整个图像。由于测试过程中的全分辨率图像通常无法放入GPU进行处理，因此首先对输入进行降采样，以使较长的轴具有L长度的同时保持相同的纵横比。</p>
 <p>级联的输入使用input segmentation进行初始化，并进行复制以保持输入通道尺寸固定。在级联的第一级之后，其中一个输入通道将被双线性向上采样的粗略输出代替。重复此操作直到最后一级，其中输入既包含初始的分割结果，也包含来自先前级别的所有输出。</p>
 <p>此设计使网络能够逐步修复分割的错误，同时保留初始分割结果中的详细信息。使用多个层次，可以粗略地勾画出对象，并在粗略层次中修复较大的误差，同时使用粗略层次提供的更强大的特征。这使得整个网络专注于精细层次的边界精度。</p>
+<h4 id="Local-Step"><a href="#Local-Step" class="headerlink" title="Local Step"></a>Local Step</h4><p><img src="4.png" alt=""></p>
+<p>图5说明了Local步骤的细节。由于内存的限制，即使使用GPU，也无法单次处理非常高分辨率的图像。而且，训练数据和测试数据之间规模的急剧变化将导致分割质量变差。因此，这篇文章利用级联模型首先使用降采样后的图像执行全局优化，然后使用来自高分辨率图像的图像裁剪执行局部优化。这些剪裁使Local步骤能够在不考虑高分辨率训练数据的情况下处理高分辨率图像，同时Global步骤能够将图像上下文考虑在内。</p>
+<p>在局部步骤中，模型采用全局步骤最后一级的两个输出，两个输出均被线性调整为图像的原始尺寸W×H。模型对图像进行尺寸为L×L的裁剪，裁剪输出的每边将被削去16个像素，以避免边界伪影，但图像边界处有例外。裁剪的步幅统一为<strong>L/2-32</strong>，这样大部分像素被4个裁剪覆盖，超出图像边界的无效裁剪被移位到与图像的最后一行/一列对齐。然后将图像裁剪送入2级级联，步幅分别为4和1。在融合过程中，由于图像上下文不同，不同补丁的输出可能会有差异，我们通过对所有输出值进行平均来解决这个问题。 <strong>对于分辨率更高的图像，可以采用从粗到细的方式递归应用局部步骤。</strong></p>
+<p>对于L的选择实验如下</p>
+<p><img src="5.png" alt=""></p>
+<h4 id="消融实验"><a href="#消融实验" class="headerlink" title="消融实验"></a>消融实验</h4><p><img src="6.png" alt=""></p>
+<p><img src="7.png" alt=""></p>
+<h2 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h2><p>数据集：PASCAL  VOC  2012 , ADE20K,BIG(自己标出来的)</p>
+<p>评价指标：mIoU、mBA（自己提出的）</p>
+<p><strong>训练方法：</strong>在训练过程中，随机抽取224×224个图像crop，并通过扰动ground truth来生成输入分割。具体扰动方法如下图所示：</p>
+<p><img src="8.png" alt=""></p>
+<p>实验结果可视化：</p>
+<p><img src="9.png" alt=""></p>
+<p><img src="10.png" alt=""></p>
+<p>对比实验：</p>
+<p><img src="11.png" alt=""></p>
+<p><img src="12.png" alt=""></p>
+<p>场景分割：</p>
+<p><img src="13.png" alt=""></p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>这是一个通用的分割细化框架，用于细化任何输入分割，并在没有任何微调的情况下获得更高的精度。CascadePSP执行高分辨率(高达4K)分割细化，即使模型从未见过任何高分辨率训练图像。在没有任何微调的情况下，在低分辨率数据上训练单一的细化模块，提出的全局步骤对整个图像进行细化，并为后续的局部步骤提供足够的图像上下文来执行全分辨率高质量的细化。</p>
 
             </div>
             <hr/>
@@ -969,7 +989,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">10k</span>&nbsp;字
+                class="white-color">10.7k</span>&nbsp;字
             
             
             
