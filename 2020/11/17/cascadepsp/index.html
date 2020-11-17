@@ -367,7 +367,7 @@
 <p>编码器解码器（Encoder-Decoder），先减少维度捕获高级语义，然后使用解码器回复空间范围，再加上跳跃链接获得更清晰的边界。</p>
 <h3 id="细化分割"><a href="#细化分割" class="headerlink" title="细化分割"></a>细化分割</h3><p>基于FCN的方法通常不会产生高质量的分割。研究人员已经用图结构模型解决了这个问题，如条件随机场（CRF）或区域生长。它们通常坚持低层次的颜色边界，而没有充分利用高级语义信息，并且不能修复较大的错误区域。由于计算和内存的限制，基于传播的方法不能处理非常高分辨率的数据。单独的细分模块也被用于提高边界精度，他们的模型接受的是端到端的训练，这种方法的模型，使用大模型容易出现过拟合，而浅层优化网络的优化能力有限。</p>
 <h3 id="级联网络"><a href="#级联网络" class="headerlink" title="级联网络"></a>级联网络</h3><p>多尺度分析在许多计算机视觉任务中同时利用了大尺度和小尺度特征，如边缘检测、目标检测和分割。特别是，有许多方法在每个阶段预测独立的结果，并将它们合并以获得多尺度信息。我们的方法不仅从粗糙的尺度中融合特征，而且使用它们作为下一个更精细的层次的输入之一。文章证明，添加粗的输出作为下一层的输入并不会改变系统模型，因此同样的网络可以递归地用于更高分辨率的细化。</p>
-<h2 id="CascadePSP"><a href="#CascadePSP" class="headerlink" title="CascadePSP"></a>CascadePSP</h2><h3 id="细分模型"><a href="#细分模型" class="headerlink" title="细分模型"></a>细分模型</h3><h4 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h4><p><img src="1.png" alt=""></p>
+<h2 id="CascadePSP"><a href="#CascadePSP" class="headerlink" title="CascadePSP"></a>CascadePSP</h2><h3 id="Refinement-Module"><a href="#Refinement-Module" class="headerlink" title="Refinement Module"></a>Refinement Module</h3><h4 id="Architecture"><a href="#Architecture" class="headerlink" title="Architecture"></a>Architecture</h4><p><img src="1.png" alt=""></p>
 <p>单个细分模块如图所示，细分模块用不同的比例拍摄图像和多个不完美的分割mask来生成精确的分割。 多尺度输入使模型能够捕获不同层次的结构和边界信息，使网络能够学习自适应地融合不同尺度的mask特征，在最精细的层次上完善分割。</p>
 <p>所有较低分辨率的输入分割均被双线性上采样为相同大小，并与RGB图像连接在一起。使用ResNet-50作为主干网络的PSPNet来从输入中提取步长为8的特征图。其中金字塔池化大小为[1,2,3,6]，这有助于捕获全局上下文。除了最终的OS 1输出之外，模型还生成了1/8和1/4的分割结果，并跳过1/2来提供纠正局部错误边界的灵活性。</p>
 <p>为了重建在提取过程中丢失的像素级图像细节，采用了来自主干网络的跳跃连接，并使用上采样模块融合了特征。将skip分支的特征和来自主干分支的双线性上采样的特征连接起来，并使用两个ResNet块对其进行处理。使用2层1×1conv生成分割输出，然后进行sigmoid函数激活。</p>
@@ -375,7 +375,7 @@
 <p>（Sobel算子主要用于获得数字图像的一阶梯度，常见的应用和物理意义是边缘检测。索贝尔算子是把图像中每个像素的上下左右四领域的灰度值加权差，在边缘处达到极值从而检测边缘。）</p>
 <script type="math/tex; mode=display">
 \mathcal{L}_{g r a d}=\alpha \cdot \frac{1}{n} \sum_{i}\left\|\nabla\left(f_{m}\left(x_{i}\right)\right)-\nabla\left(f_{m}\left(y_{i}\right)\right)\right\|_{1}</script><script type="math/tex; mode=display">
-\mathcal{L}=\mathcal{L}_{C E}^{8}+\frac{1}{2}\left(\mathcal{L}_{L 1+L 2}^{4}+\mathcal{L}_{C E}^{4}\right)+\mathcal{L}_{L 1+L 2}^{1}+\mathcal{L}_{g r a d}^{1}​</script><h4 id="细分模块的消融研究"><a href="#细分模块的消融研究" class="headerlink" title="细分模块的消融研究"></a>细分模块的消融研究</h4><p><img src="2.png" alt=""></p>
+\mathcal{L}=\mathcal{L}_{C E}^{8}+\frac{1}{2}\left(\mathcal{L}_{L 1+L 2}^{4}+\mathcal{L}_{C E}^{4}\right)+\mathcal{L}_{L 1+L 2}^{1}+\mathcal{L}_{g r a d}^{1}​</script><h4 id="Ablation-Study-of-Refinement-Module"><a href="#Ablation-Study-of-Refinement-Module" class="headerlink" title="Ablation Study of Refinement Module"></a>Ablation Study of Refinement Module</h4><p><img src="2.png" alt=""></p>
 <p>评估方法使用标准分割度量IoU。为了突出边界精度的感性重要性，文章提出了一种新的平均边界精度度量(mBA)。为了对不同大小的图像进行鲁棒估计，我们在半径为[3,w+h 300]中进行均匀采5个样本，在真值边界内的每个半径范围内计算分割精度，然后对这些值进行平均。表1显示，文章提出的模型在IoU方面取得了最显著的改进，在边界精度方面甚至更显著。</p>
 <p>通过多级级联，模块可以将不同的细化阶段委托给不同的规模。如图3所示，这个3级模型使用了中间的小规模分段来更好地捕获对象结构。尽管模型有着相同的感受野，但3级模型相比于1级模型可以更好地利用结构线索产生更详细的分割。</p>
 <h3 id="Global-and-Local-Cascade-Refinement"><a href="#Global-and-Local-Cascade-Refinement" class="headerlink" title="Global and Local Cascade Refinement"></a>Global and Local Cascade Refinement</h3><p>在测试中，使用全局步骤和局部步骤通过采用相同的优化模块来执行高分辨率分割优化。具体来说，“全局”步骤考虑将整个调整大小后的图像用于修复结构，而“局部”步骤则使用图像裁剪以全分辨率优化细节。可以将相同的优化模块递归用于更高分辨率的优化。</p>
@@ -388,7 +388,7 @@
 <p>在局部步骤中，模型采用全局步骤最后一级的两个输出，两个输出均被线性调整为图像的原始尺寸W×H。模型对图像进行尺寸为L×L的裁剪，裁剪输出的每边将被削去16个像素，以避免边界伪影，但图像边界处有例外。裁剪的步幅统一为<strong>L/2-32</strong>，这样大部分像素被4个裁剪覆盖，超出图像边界的无效裁剪被移位到与图像的最后一行/一列对齐。然后将图像裁剪送入2级级联，步幅分别为4和1。在融合过程中，由于图像上下文不同，不同补丁的输出可能会有差异，我们通过对所有输出值进行平均来解决这个问题。 <strong>对于分辨率更高的图像，可以采用从粗到细的方式递归应用局部步骤。</strong></p>
 <p>对于L的选择实验如下</p>
 <p><img src="5.png" alt=""></p>
-<h4 id="消融实验"><a href="#消融实验" class="headerlink" title="消融实验"></a>消融实验</h4><p><img src="6.png" alt=""></p>
+<h4 id="Ablation-Study-for-Global-and-Local-Refinement"><a href="#Ablation-Study-for-Global-and-Local-Refinement" class="headerlink" title="Ablation Study for Global and Local Refinement"></a>Ablation Study for Global and Local Refinement</h4><p><img src="6.png" alt=""></p>
 <p><img src="7.png" alt=""></p>
 <h2 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h2><p>数据集：PASCAL  VOC  2012 , ADE20K,BIG(自己标出来的)</p>
 <p>评价指标：mIoU、mBA（自己提出的）</p>
@@ -402,7 +402,7 @@
 <p><img src="12.png" alt=""></p>
 <p>场景分割：</p>
 <p><img src="13.png" alt=""></p>
-<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>这是一个通用的分割细化框架，用于细化任何输入分割，并在没有任何微调的情况下获得更高的精度。CascadePSP执行高分辨率(高达4K)分割细化，即使模型从未见过任何高分辨率训练图像。在没有任何微调的情况下，在低分辨率数据上训练单一的细化模块，提出的全局步骤对整个图像进行细化，并为后续的局部步骤提供足够的图像上下文来执行全分辨率高质量的细化。</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>这是一个通用的分割细化框架，用于细化任何输入分割，并在没有任何微调的情况下获得更高的精度。CascadePSP执行高分辨率分割细化，即使模型从未见过任何高分辨率训练图像。在没有任何微调的情况下，在低分辨率数据上训练单一的细化模块，提出的全局步骤对整个图像进行细化，并为后续的局部步骤提供足够的图像上下文来执行全分辨率高质量的细化。</p>
 
             </div>
             <hr/>
