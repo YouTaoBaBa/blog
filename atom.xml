@@ -6,7 +6,7 @@
   <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/atom.xml" rel="self"/>
   
   <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/"/>
-  <updated>2020-11-17T14:00:58.429Z</updated>
+  <updated>2020-11-24T13:25:06.076Z</updated>
   <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/</id>
   
   <author>
@@ -17,11 +17,53 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>GLNet</title>
+    <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/24/glnet/"/>
+    <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/24/glnet/</id>
+    <published>2020-11-24T08:40:10.000Z</published>
+    <updated>2020-11-24T13:25:06.076Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Collaborative-global-local-networks-for-memory-efficient-segmentation-of-ultra-high-resolution-images&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="超分辨率语义分割" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/%E8%B6%85%E5%88%86%E8%BE%A8%E7%8E%87%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PPN</title>
+    <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/24/ppn/"/>
+    <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/24/ppn/</id>
+    <published>2020-11-24T07:54:06.000Z</published>
+    <updated>2020-11-24T07:57:18.542Z</updated>
+    
+    
+    
+    
+    <category term="算法" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="超分辨率语义分割" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/%E8%B6%85%E5%88%86%E8%BE%A8%E7%8E%87%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
+    
+  </entry>
+  
+  <entry>
     <title>CascadePSP</title>
     <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/17/cascadepsp/"/>
     <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/17/cascadepsp/</id>
     <published>2020-11-17T10:58:32.000Z</published>
-    <updated>2020-11-17T14:00:58.429Z</updated>
+    <updated>2020-11-24T08:33:44.410Z</updated>
     
     
       
