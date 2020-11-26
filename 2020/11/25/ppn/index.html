@@ -327,7 +327,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-11-24
+                    2020-11-25
                 </div>
                 
 
@@ -348,7 +348,51 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h1 id="Patch-Proposal-Network-for-Fast-Semantic-Segmentation-of-High-Resolution-Images"><a href="#Patch-Proposal-Network-for-Fast-Semantic-Segmentation-of-High-Resolution-Images" class="headerlink" title="Patch Proposal Network for Fast Semantic Segmentation of High-Resolution Images"></a>Patch Proposal Network for Fast Semantic Segmentation of High-Resolution Images</h1><h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<li>PPN的目的是从普通的patches中选出重要的patch，它是一个具有较好评判准则的分类网络，他能够减轻训练负担并改善分割的结果。</li>
+<li>对于超分任务，该篇研究将PPN嵌入全局细化网络（GRNet），并使用PPN来指导全局分支和细化分支之间的协作。</li>
+<li>与最先进的方法相比，文章提出的GRNet在3个公开的高分辨率数据集上取得了最好的性能:DeepGlobe、ISIC和CRAG。特别是，该篇工作的方法在DeepGlobe上使用GPU实现了12.9帧/秒的帧率，因此，无论在速度还是在精度上，它都是一种实用的分割方法。</li>
+<li>PPN具有良好的泛化能力。它可以很容易地直接集成到其他流行的语义分割框架中。PPN提高了baseline语义分割网络的分割性能。</li>
+</ul>
+<h2 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h2><p>对多尺度上下文信息的融合，可以让我们得到了较好的分割效果。RefineNet增加了一个多路径细分块，在不同的层次上递归利用多尺度特征。特征金字塔网络(Feature Pyramid Network,FPN) 利用多尺度语义信息，通过自上而下的不同层次融合机制实现预测。</p>
+<p>此外，上下文聚合在分割方法中起着重要的作用。DeepLab采用了扩张型卷积和空洞空间金字塔池化模块（atrous spatial pyramid pooling module）来帮助扩展感受域，有利于更好地将全局上下文聚合为细粒度特征。PSPNet采用金字塔汇聚模块，将不同区域的上下文信息聚合起来，提高了捕获全局上下文的能力。</p>
+<p>此外，出于实时性和低延迟的目的，追求快速或实时的语义分割模型越来越受到人们的关注。ICNet 采用级联特征融合机制，利用低分辨率信息和高分辨率图像的细节来细化分割预测。BiSeNet构建了两条路径，一条是负责获取空间信息的空间路径，另一条是实现较大接受场的上下文路径，然后利用特征融合模块将两条路径的输出进行整合。虽然这些实时分割网络具有较低的计算复杂度和内存消耗，但它们的分割精度远远低于其他网络。</p>
+<h2 id="Proposal-Method"><a href="#Proposal-Method" class="headerlink" title="Proposal Method"></a>Proposal Method</h2><h3 id="The-Architecture-of-GRNet"><a href="#The-Architecture-of-GRNet" class="headerlink" title="The Architecture of GRNet"></a>The Architecture of GRNet</h3><p>下图显示了GRNet的架构。GRNet包含三个组件:全局分支(g分支)、PPN和细化分支(r分支)。将下采样图像输入G-branch和PPN。利用G-branch生成下行采样图像的初步全局分割特征。PPN选择重要的补丁。然后由G-branch和PPN引导R-branch对所选patch的分割进行细化，即特征提取和细化。然后，融合全局层次特征和细化的局部特征生成最终的分割。下面我们将详细介绍PPN的运行机制、特征提取和细化以及特征融合。</p>
+<p><img src="image-20201125173639798.png" alt="图2 GRNet的架构。GRNet包含三个组件:G-branch、PPN和R-branch。首先对下采样图像进行G-branch和PPN处理。然后用结果指导R-branch对分割进行细化。然后将细化后的分割结果与特征融合块中全局分支的输出进行融合。最后生成分割结果。"></p>
+<h4 id="PPN"><a href="#PPN" class="headerlink" title="PPN"></a>PPN</h4><p>PPN是一个独立的网络，作为一个选择器。在测试阶段，PPN在没有监督的情况下进行选择。因此，PPN必须在训练阶段学习选择规则。受到老师教学的启发，如果老师想要提高小组的平均成绩，一个更简单的方法是提高低于平均成绩的学生的成绩。因此我们采用类似的判别选择规则来指导PPN进行patch选择。当遇到当前特征的分割得分$I_{c}$低于全局平均分数$I_{t}$的时候，该特征块将会被选择并记录为1，具体公式如下所示。这里，以G-branch中得到的均值对并集的交(mIoU)作为分割分数的度量。</p>
+<script type="math/tex; mode=display">
+K=\begin{cases}
+1& {I_{c}<I_{t}}\\
+0& otherwise
+\end{cases}</script><p>先将H×W超分图$I$下采样为$I_{g}$，并平等地划分成N个不重叠的patches，然后将$I_g$喂进全局分支获得特征$F^G$,然后用划分$I_g$的方法去划分$F^G$。</p>
+<p>PPN是一个分类网络，其体系结构如图3所示。将下采样图像$I_g$送入PPN的主干中，提取深层特征$F^B$，平铺成特征patch $\{ {F^B_i}\}^N_{i=1}$。然后通过平均池化层对$F^B$和$F^B_i$进行处理，再通过全连接层得到全局得分$G_{score}$和patch得分$P_{score}$。然后将$G_{score}$与各$P_{score}$的差值输入sigmoid函数进行预测，预测结果形成flag map，其中值1表示预测概率≥0.5，值0表示预测概率&lt;0.5。我们将二进制交叉熵(BCE)损失用于PPN，这是训练一个二元分类网络的标准实践。</p>
+<p><img src="image-20201125182517527.png" alt="图3 PPN框架。将整个初步特征和特征块依次送入平均池化层、全连接层和sigmoid函数中，得到flag map。减号表示G和P之间的元素间的减法。"></p>
+<h4 id="Feature-Extraction-and-Refinement"><a href="#Feature-Extraction-and-Refinement" class="headerlink" title="Feature Extraction and Refinement"></a>Feature Extraction and Refinement</h4><p>根据PPN的flag map，自适应地从G-branch中选取特征patch$F^G_i$和对应位置的原始图像$I$的patch$P_i$，使G-branch和R-branch协同工作。为了细化patch分割，首先将$F^G_i$放大到$P_i$的大小。我们在放大后的$F^G_i$上执行类似于(Yu et al. 2018b)的显著性操作，并将结果与$P_i$进行元素逐点相乘，得到显著性图像patch，并将显著性图像patch送入R-branch。分支输出改进的patch分割$F^R_i$。</p>
+<h4 id="Feature-Fusion"><a href="#Feature-Fusion" class="headerlink" title="Feature Fusion"></a>Feature Fusion</h4><p>为了准备一个简单而有效的融合机制来更好地融合来自G-Branch全局特征$F^G$和选中的来自R-Branch的局部特征,选中的地方特色从R-branch$F^R_i$,我们首先重塑特性映射$F^E$(初始化为0),将其变为与$F^G$一样的大小并均匀划分为$\{F_1^E,F_2^E,……,F_i^E,…,F_N^E\}$。如果第i个patch被PPN选中，那么改进后的特征$F^R_i$将会取代FE中的对应特征$F^E_i$。特别的是，在$F^G$中，选择的patch应与对应的patch融合，未选择的patch保持不变。最后,重建的$F$与$F^G$,然后连接结果送入聚合层包含三个卷积层:(3,3,256),(3,3,256),(1,1,Nc),其中(k, k, s)意味着卷积核是k×k×s，Nc是类别数量。</p>
+<h4 id="Overall-Loss-Function"><a href="#Overall-Loss-Function" class="headerlink" title="Overall Loss Function"></a>Overall Loss Function</h4><script type="math/tex; mode=display">
+L=L_g+L_R+L_A</script><script type="math/tex; mode=display">
+\mathcal{L}_{\mathcal{G}}=\left\{\begin{array}{ll}-\left(1-y_{g}^{\prime}\right)^{\gamma} \log y_{g^{\prime}}^{\prime}, & y_{g}=1 \\ -y_{g}^{\prime \gamma} \log \left(1-y_{g}^{\prime}\right), & y_{g}=0\end{array}\right.</script><script type="math/tex; mode=display">
+\mathcal{L}_{\mathcal{R}}=\left\{\begin{array}{ll}-\left(1-y_{r}^{\prime}\right)^{\gamma} \log y_{r^{\prime}}^{\prime}, & y_{r}=1 \\ -y_{r}^{\prime \gamma} \log \left(1-y_{r}^{\prime}\right), & y_{r}=0\end{array}\right.</script><script type="math/tex; mode=display">
+\mathcal{L}_{\mathcal{A}}=\left\{\begin{array}{ll}-\left(1-y_{a}^{\prime}\right)^{\gamma} \log y_{a}^{\prime}, & y_{a}=1 \\ -y_{a}^{\prime \gamma} \log \left(1-y_{a}^{\prime}\right), & y_{a}=0\end{array}\right.</script><h4 id="Training"><a href="#Training" class="headerlink" title="Training"></a>Training</h4><p>采用交替优化的3步训练方案。这里，将除PPN之外的网络定义为主体，包括G-branch、R-branch和聚合层，并将PPN作为选择器。G-branch使用以ResNet50 (He et al. 2016)为主干的FPN (Lin et al. 2017b)，R-branch使用以ResNet18 为主干的FPN。PPN使用没有最后一个残块的ResNet18 作为骨干。首先，我们微调训练G-branch来完成端到端全局分割任务。其次，我们在g分支输出的指导下对PPN进行训练。G-branch和PPN是两个独立的网络。最后，我们在R-branch中对分割进行了细化。在聚合层PPN的指导下，将细化结果与G-branch的输出进行融合。固定PPN调整主体。迭代进行交替训练，直到达到设定的迭代次数。</p>
+<h2 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h2><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><p><strong>DeepGlobe</strong>：DeepGlobe (Demir et al. 2018)是一个聚焦于农村地区的高质量卫星数据集，提供了7类803幅图像，分辨率为2448×2448像素。我们将数据集随机分为训练集、验证集和测试集，分别为455、206和142张图像。特别地，七个类中的对象命名为unknown，在我们的实验中没有讨论。</p>
+<p><strong>ISIC</strong>：ISIC (schandl, Rosendahl, Kittler 2018;Codella et al. 2018)是一个用于色素皮肤病变的超分辨率医学数据集，其训练集包含2077张图像，验证集包含260张图像，测试集包含259张图像。ISIC的平均分辨率高达9 m，最大的图像尺寸为6748×4499。密集的注释包括两类:病变区域和背景。但由于背景比例较大，我们只选取病变区域进行评估。</p>
+<p><strong>CRAG</strong>：CRAG (Graham et al. 2019;Awan et al. 2017)是一个HRI数据集，包括两类并显示不同分化的腺形态。将CRAG数据集分为训练集和测试集，分别包含173和40张图像。平均尺寸1512×1516。</p>
+<p><strong>Cityscapes</strong>：Cityscapes (Cordts et al. 2016)是一种街景数据集，通常被常用的语义分割方法用于评价。其中包含3475张大小为2048×1024的精细注释图像，其中2975张用于训练，其余用于验证。有19个预定义的语义类，这19个类之外的对象在训练和验证阶段都将被忽略。</p>
+<h3 id="Ablation-Studies"><a href="#Ablation-Studies" class="headerlink" title="Ablation Studies"></a>Ablation Studies</h3><p><img src="image-20201126135712278.png" alt="图4"></p>
+<p><img src="image-20201126135737882.png" alt="图5"></p>
+<p><img src="image-20201126135853091.png" alt="图6"></p>
+<p><img src="image-20201126135804722.png" alt="表1"></p>
+<p><img src="image-20201126135935481.png" alt="表2"></p>
+<h3 id="Comparisons-with-state-of-the-art-methods"><a href="#Comparisons-with-state-of-the-art-methods" class="headerlink" title="Comparisons with state-of-the-art methods"></a>Comparisons with state-of-the-art methods</h3><p><img src="image-20201126140055529.png" alt="图7"></p>
+<p><img src="image-20201126140255366.png" alt="表3"></p>
+<p><img src="image-20201126140327304.png" alt="表4"></p>
+<p><img src="image-20201126140348850.png" alt="表5"></p>
+<p><img src="image-20201126140407105.png" alt="表6"></p>
+<h3 id="The-generalization-of-PPN"><a href="#The-generalization-of-PPN" class="headerlink" title="The generalization of PPN"></a>The generalization of PPN</h3><p><img src="image-20201126140829464.png" alt="表7"></p>
+<p><img src="image-20201126140854740.png" alt="图8"></p>
+<p><img src="image-20201126140931203.png" alt="图9"></p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>这项工作提出PPN，在超分高分图像语义分割任务上更好地权衡分割精度，推理速度和内存使用。PPN嵌入到全局-局部框架中，选择重要的patch，并进一步细化。在DeepGlobe、ISIC和CRAG上的实验结果表明，该方法取得了最佳的综合性能。此外，PPN还可以嵌入到其他语义分割框架中，实验结果表明，PPN具有良好的泛化能力。</p>
+
             </div>
             <hr/>
 
@@ -373,7 +417,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/24/ppn/">https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/24/ppn/</a>
+                    <a href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/25/ppn/">https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/25/ppn/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -626,30 +670,31 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/11/24/glnet/">
+                <a href="/2020/11/25/ppn/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="GLNet">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="PPN">
                         
-                        <span class="card-title">GLNet</span>
+                        <span class="card-title">PPN</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Collaborative global-local networks for memory-efficient segmentation of ultra-high resolution imagesMotivation
-现有方法在超分辨
+                            Patch Proposal Network for Fast Semantic Segmentation of High-Resolution ImagesContribution
+PPN的目的是从普通的patches中选出重要的patc
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-11-24
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-25
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -662,6 +707,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -680,24 +726,25 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/11/17/cascadepsp/">
+                <a href="/2020/11/24/glnet/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="CascadePSP">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="GLNet">
                         
-                        <span class="card-title">CascadePSP</span>
+                        <span class="card-title">GLNet</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            CascadePSP: Toward Class-Agnostic and Very High-Resolution Segmentation via Global and Local Refinement通过全局和局部细化实现类不可知和非
+                            Collaborative global-local networks for memory-efficient segmentation of ultra-high resolution imagesMotivation
+现有方法在超分辨
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-17
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-24
                             </span>
                         <span class="publish-author">
                             
@@ -929,7 +976,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">14.4k</span>&nbsp;字
+                class="white-color">15.4k</span>&nbsp;字
             
             
             

@@ -6,7 +6,7 @@
   <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/atom.xml" rel="self"/>
   
   <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/"/>
-  <updated>2020-11-24T13:25:06.076Z</updated>
+  <updated>2020-11-26T06:27:01.288Z</updated>
   <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>PPN</title>
+    <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/25/ppn/"/>
+    <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/25/ppn/</id>
+    <published>2020-11-25T09:14:06.000Z</published>
+    <updated>2020-11-26T06:27:01.288Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;Patch-Proposal-Network-for-Fast-Semantic-Segmentation-of-High-Resolution-Images&quot;&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="算法" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+    <category term="超分辨率语义分割" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/%E8%B6%85%E5%88%86%E8%BE%A8%E7%8E%87%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
+    
+  </entry>
   
   <entry>
     <title>GLNet</title>
@@ -31,23 +56,6 @@
     <summary type="html">&lt;h1 id=&quot;Collaborative-global-local-networks-for-memory-efficient-segmentation-of-ultra-high-resolution-images&quot;&gt;&lt;a</summary>
         
       
-    
-    
-    
-    <category term="算法" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/categories/%E7%AE%97%E6%B3%95/"/>
-    
-    
-    <category term="超分辨率语义分割" scheme="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/tags/%E8%B6%85%E5%88%86%E8%BE%A8%E7%8E%87%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>PPN</title>
-    <link href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/24/ppn/"/>
-    <id>https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/24/ppn/</id>
-    <published>2020-11-24T07:54:06.000Z</published>
-    <updated>2020-11-24T07:57:18.542Z</updated>
-    
     
     
     
