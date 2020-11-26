@@ -408,7 +408,7 @@
 <h4 id="ISIC"><a href="#ISIC" class="headerlink" title="ISIC"></a>ISIC</h4><p>ISIC皮肤损害边界分割挑战数据集包含2596超分辨率图，随机切分训练，验证测试为2077， 260， 259张图。</p>
 <h5 id="由粗到细的分割"><a href="#由粗到细的分割" class="headerlink" title="由粗到细的分割"></a>由粗到细的分割</h5><p>在严重不平衡的ISIC数据集上，global和local分支分别只能实现72.7%和48.5%的mIoU，当使用由粗到细的策略时，可以清楚看到更加平衡的前景背景比例（图8（1）中的红条）。</p>
 <p>通过裁剪前景边界框，local分支只在更小的类别平衡的图像上训练，默认将裁掉的边界外区域作为背景。在类别平衡的图像总共，<strong>G→L</strong>的mIoU是73.9%，<strong>G⇄L</strong>的mIoU是75.2%，这种情况下，全局分支使用更加精确的全局上下文信息，因为对裁剪更小的图像进行下采样，丢失的信息会更少。由粗到细的方法表明它能较好地捕获上下文信息，解决类别不平衡问题。表4中是消融实验，图8（2）是可视化结果。</p>
-<p><img src="image-20201124211901569.png" alt="表4"></p>
+<p><img src="image-20201126202657274.png" alt="表4"></p>
 <h5 id="精度和显存比较"><a href="#精度和显存比较" class="headerlink" title="精度和显存比较"></a>精度和显存比较</h5><p><img src="image-20201124212119447.png" alt="表5"></p>
 <h4 id="Inria-Aerial"><a href="#Inria-Aerial" class="headerlink" title="Inria Aerial"></a>Inria Aerial</h4><p>包含180张超分图，每个都是5000×× 5000像素，随机划分训练验证测试为126，27，27张。表6说明了深度特征图共享策略的有效性。测试结果如表7，GLNet的mIoU有71.2%，在显存占用和准确率上都比其他方法要好。</p>
 <p><img src="image-20201124212315576.png" alt="表6"></p>
@@ -995,7 +995,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">15.8k</span>&nbsp;字
+                class="white-color">17.1k</span>&nbsp;字
             
             
             
