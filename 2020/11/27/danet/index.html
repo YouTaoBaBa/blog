@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="Model-Based协同过滤算法, YouTaoBlog">
+    <meta name="keywords" content="DANet, YouTaoBlog">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>Model-Based协同过滤算法 | YouTaoBlog</title>
+    <title>DANet | YouTaoBlog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -180,12 +180,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">Model-Based协同过滤算法</h1>
+                    <h1 class="description center-align post-title">DANet</h1>
                 </div>
             </div>
         </div>
@@ -302,8 +302,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/Model-Based%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%AE%97%E6%B3%95/">
-                                <span class="chip bg-color">Model-Based协同过滤算法</span>
+                            <a href="/tags/%E8%B6%85%E5%88%86%E8%BE%A8%E7%8E%87%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/">
+                                <span class="chip bg-color">超分辨率语义分割</span>
                             </a>
                         
                     </div>
@@ -314,8 +314,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/" class="post-category">
-                                推荐系统
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                算法
                             </a>
                         
                     </div>
@@ -327,7 +327,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-09-26
+                    2020-11-27
                 </div>
                 
 
@@ -348,42 +348,46 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Model-Based协同过滤算法"><a href="#Model-Based协同过滤算法" class="headerlink" title="Model-Based协同过滤算法"></a>Model-Based协同过滤算法</h1><ul>
-<li>基于分类算法、回归算法、聚类算法</li>
-<li>基于矩阵分解的推荐</li>
-<li>基于神经网络</li>
-<li>基于图模型</li>
+                <h1 id="Dual-Attention-Network-for-Scene-Segmentation"><a href="#Dual-Attention-Network-for-Scene-Segmentation" class="headerlink" title="Dual Attention Network for Scene Segmentation"></a>Dual Attention Network for Scene Segmentation</h1><p><a href="https://openaccess.thecvf.com/content_CVPR_2019/html/Fu_Dual_Attention_Network_for_Scene_Segmentation_CVPR_2019_paper.html" target="_blank" rel="noopener">论文地址：https://openaccess.thecvf.com/content_CVPR_2019/html/Fu_Dual_Attention_Network_for_Scene_Segmentation_CVPR_2019_paper.html</a></p>
+<p><a href="https://github.com/junfu1115/DANet/" target="_blank" rel="noopener">代码地址：https://github.com/junfu1115/DANet/</a></p>
+<p><a href="https://zhuanlan.zhihu.com/p/54510782" target="_blank" rel="noopener">参考博客：https://zhuanlan.zhihu.com/p/54510782</a></p>
+<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
+<li>提出了一个双重注意网络（DANet）来捕捉空间和通道维度中的全局特征依赖关系</li>
+<li>建议使用位置注意力模块来学习特征的空间相互依赖性，并设计通道注意力模块来模拟通道相互依赖性。通过在局部特征上建模丰富的上下文依赖关系，显著改善了分割结果</li>
+<li>在三个数据集Cityscapes， PASCAL Context和COCO Stuff上实现了state-of-the-art的结果</li>
 </ul>
-<h2 id="Baseline"><a href="#Baseline" class="headerlink" title="Baseline"></a>Baseline</h2><p>这个用户或物品普遍高于或低于平均值的差值，成为偏差（bias）。</p>
-<h3 id="目标"><a href="#目标" class="headerlink" title="目标"></a>目标</h3><ul>
-<li>找出每个用户普遍高于或低于他人的偏置值$b_{u}$</li>
-<li>找出每件物品普遍高于或低于其他物品的偏置值$b_{i}$</li>
-<li>目标转换为寻找最优的$b_{u}$和$b_{i}$</li>
-</ul>
-<h3 id="预测步骤"><a href="#预测步骤" class="headerlink" title="预测步骤"></a>预测步骤</h3><ul>
-<li>计算所有电影的均分$\mu$</li>
-<li>计算每个用户评分与平均评分$\mu$的偏置值$b_{u}$</li>
-<li>计算每部电影所接受的评分与平均评分$\mu$的偏置值$b_{I}$</li>
-<li>预测用户对电影的评分：<script type="math/tex; mode=display">
-\hat{r}_{ui}=b_{ui}=\mu + b_{u}+b_{i}</script></li>
-<li>转换为损失优化的过程<script type="math/tex; mode=display">
-J(\theta)=Cost=f(b_{u},b_{i})</script><script type="math/tex; mode=display">
-J(\theta)=\sum_{u,i\in R}(r_{ui}-\mu -b_{u}-b_{i})^2+\lambda *(\sum_{u}{b_{u}}^2+\sum_{i}{b_{i}}^2)</script></li>
-</ul>
-<h2 id="FunkSVD-LFM"><a href="#FunkSVD-LFM" class="headerlink" title="FunkSVD(LFM)"></a>FunkSVD(LFM)</h2><p>原始的SVD要求矩阵中每个元素非空，如果做填充，会造成大量噪声，破坏原始分布。</p>
+<h2 id="DANet"><a href="#DANet" class="headerlink" title="DANet"></a>DANet</h2><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p><img src="image-20201127144939189.png" alt="图2"></p>
 <ul>
-<li><p>P为User-LF矩阵，即用户-隐藏特征矩阵</p>
-</li>
-<li><p>Q为Item-LF矩阵</p>
-</li>
-<li><p>R=P*Q，为User-Item矩阵</p>
-</li>
-<li><p>能处理稀疏评分矩阵</p>
-</li>
+<li>采用 Dilated ResNet (DeepLab V2的主干网络)作为主干，删除了下采样操作并在最后两个ResNet块中使用了空洞卷积，最终特征映射的大小是输入图像的1/8</li>
+<li>Dilated ResNet 产生的特征图再送入两个平行的注意力模块中</li>
+<li>最后汇总两个注意力模块的输出特征，以获得更好的像素级预测特征表示</li>
 </ul>
-<p>利用矩阵分解技术，将原始User-Item评分矩阵分解为P、Q，然后用P、Q利用梯度下降去还原R，整个过程相当于降维。</p>
-<h2 id="BiasSVE"><a href="#BiasSVE" class="headerlink" title="BiasSVE"></a>BiasSVE</h2><p>矩阵分解+baseline思想</p>
-<h2 id="SVD"><a href="#SVD" class="headerlink" title="SVD++"></a>SVD++</h2><p>矩阵分解+baseline思想+其他影响（点击、收藏、购买）</p>
+<h3 id="Position-Attention-Module-amp-Channel-Attention-Module"><a href="#Position-Attention-Module-amp-Channel-Attention-Module" class="headerlink" title="Position Attention Module&amp;Channel Attention Module"></a>Position Attention Module&amp;Channel Attention Module</h3><p><img src="image-20201127145247674.png" alt="图3"></p>
+<h4 id="PAM："><a href="#PAM：" class="headerlink" title="PAM："></a>PAM：</h4><p><strong>E的每个位置的值是原始特征每个位置的加权求和得到的：</strong></p>
+<ul>
+<li>特征图<strong>A</strong>(C×H×W)首先分别通过3个卷积层得到3个特征图<strong>B,C,D,</strong>然后将<strong>B,C,D</strong> reshape为C×N，其中N=H×W</li>
+<li>之后将reshape后的<strong>B</strong>的转置(NxC)与reshape后的C(CxN)相乘，再通过softmax得到spatial attention map <strong>S</strong>(N×N)</li>
+<li>接着在reshape后的<strong>D</strong>(CxN)和<strong>S</strong>的转置(NxN)之间执行矩阵乘法，再乘以尺度系数α，再reshape为原来形状，最后与<strong>A</strong>相加得到最后的输出<strong>E</strong></li>
+<li>其中α初始化为0，并逐渐的学习得到更大的权重</li>
+</ul>
+<h4 id="CAM："><a href="#CAM：" class="headerlink" title="CAM："></a>CAM：</h4><p><strong>每个通道的最终特征是所有通道和原始特征的加权和：</strong></p>
+<ul>
+<li>分别对<strong>A</strong>做reshape(CxN)和reshape与transpose(NxC)</li>
+<li>将得到的两个特征图相乘，再通过softmax得到channel attention map <strong>X</strong>(C×C)</li>
+<li>接着把<strong>X</strong>的转置(CxC)与reshape的<strong>A</strong>(CxN)做矩阵乘法，再乘以尺度系数β，再reshape为原来形状，最后与<strong>A</strong>相加得到最后的输出<strong>E</strong></li>
+<li>其中β初始化为0，并逐渐的学习得到更大的权重</li>
+</ul>
+<h4 id="Attention-Module-Embedding-with-Networks"><a href="#Attention-Module-Embedding-with-Networks" class="headerlink" title="Attention Module Embedding with Networks"></a>Attention Module Embedding with Networks</h4><p>为了充分利用远程上下文信息，将这两个注意模块的特征进行聚合。具体地说，将两个注意模块的输出通过卷积层进行转换，并进行元素求和来完成特征融合。最后通过卷积层生成最终的预测图。不采用级联操作，因为它需要更多的GPU内存。attention模块很简单，可以直接插入到现有的FCN结构中。它们没有增加太多的参数，但有效地增强了特征表示。</p>
+<h2 id="Experiment"><a href="#Experiment" class="headerlink" title="Experiment"></a>Experiment</h2><h3 id="Dataset"><a href="#Dataset" class="headerlink" title="Dataset"></a>Dataset</h3><p>Cityscapes、PASCAL VOC 2012、PASCAL Context、COCO Stuff</p>
+<h3 id="Results-on-Cityscapes-Dataset"><a href="#Results-on-Cityscapes-Dataset" class="headerlink" title="Results on Cityscapes Dataset"></a>Results on Cityscapes Dataset</h3><h4 id="Ablation-Study-for-Attention-Modules"><a href="#Ablation-Study-for-Attention-Modules" class="headerlink" title="Ablation Study for Attention Modules"></a>Ablation Study for Attention Modules</h4><p><img src="image-20201127150113823.png" alt="表1"></p>
+<h4 id="Ablation-Study-for-Improvement-Strategies"><a href="#Ablation-Study-for-Improvement-Strategies" class="headerlink" title="Ablation Study for Improvement Strategies"></a>Ablation Study for Improvement Strategies</h4><p><img src="image-20201127150241971.png" alt="表2"></p>
+<h4 id="Visualization-of-Attention-Module"><a href="#Visualization-of-Attention-Module" class="headerlink" title="Visualization of Attention Module"></a>Visualization of Attention Module</h4><p><img src="image-20201127151002338.png" alt="图6"></p>
+<h4 id="Comparing-with-State-of-the-art"><a href="#Comparing-with-State-of-the-art" class="headerlink" title="Comparing with State-of-the-art"></a>Comparing with State-of-the-art</h4><p><img src="image-20201127151049762.png" alt="表3"></p>
+<h3 id="Results-on-PASCAL-VOC-2012-Dataset"><a href="#Results-on-PASCAL-VOC-2012-Dataset" class="headerlink" title="Results on PASCAL VOC 2012 Dataset"></a>Results on PASCAL VOC 2012 Dataset</h3><p><img src="image-20201127151154592.png" alt="表4"></p>
+<p><img src="image-20201127151244367.png" alt="表5"></p>
+<h3 id="Results-on-PASCAL-Context-Dataset"><a href="#Results-on-PASCAL-Context-Dataset" class="headerlink" title="Results on PASCAL Context Dataset"></a>Results on PASCAL Context Dataset</h3><p><img src="image-20201127151309971.png" alt="表6"></p>
+<h3 id="Results-on-COCO-Stuff-Dataset"><a href="#Results-on-COCO-Stuff-Dataset" class="headerlink" title="Results on COCO Stuff Dataset"></a>Results on COCO Stuff Dataset</h3><p><img src="image-20201127151407431.png" alt="表7"></p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>文章提出了一种用于场景分割的双注意网络(DANet)，利用自注意机制自适应地融合局部语义特征。具体地说，文章引入了位置注意模块（PAM）和通道注意模块（CAM）来分别捕获空间维度和通道维度上的全局依赖关系。实验表明，双注意模块能够有效地捕获远程上下文信息，分割结果更加精确。DANet在Cityscapes、Pascal VOC 2012、Pascal Context和COCO Stuff四个场景分割数据集上均取得了优异的一致性。此外，降低计算复杂度和增强模型的鲁棒性也很重要，这将在今后的工作中进行研究。</p>
 
             </div>
             <hr/>
@@ -409,7 +413,7 @@ J(\theta)=\sum_{u,i\in R}(r_{ui}-\mu -b_{u}-b_{i})^2+\lambda *(\sum_{u}{b_{u}}^2
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/26/model-based-xie-tong-guo-lu-suan-fa/">https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/09/26/model-based-xie-tong-guo-lu-suan-fa/</a>
+                    <a href="https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/27/danet/">https://coding-pages-bucket-3473233-7945403-365-307929-1302308732.cos-website.ap-hongkong.myqcloud.com/2020/11/27/danet/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -447,8 +451,8 @@ J(\theta)=\sum_{u,i\in R}(r_{ui}-\mu -b_{u}-b_{i})^2+\lambda *(\sum_{u}{b_{u}}^2
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/Model-Based%E5%8D%8F%E5%90%8C%E8%BF%87%E6%BB%A4%E7%AE%97%E6%B3%95/">
-                                    <span class="chip bg-color">Model-Based协同过滤算法</span>
+                                <a href="/tags/%E8%B6%85%E5%88%86%E8%BE%A8%E7%8E%87%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/">
+                                    <span class="chip bg-color">超分辨率语义分割</span>
                                 </a>
                             
                         </div>
@@ -662,51 +666,48 @@ J(\theta)=\sum_{u,i\in R}(r_{ui}-\mu -b_{u}-b_{i})^2+\lambda *(\sum_{u}{b_{u}}^2
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/09/27/java-wang-luo-bian-cheng/">
+                <a href="/2020/11/27/danet/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="java网络编程">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="DANet">
                         
-                        <span class="card-title">java网络编程</span>
+                        <span class="card-title">DANet</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            网络处理TCP聊天客户端package com.youtao;
-
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.InetAddress;
-i
+                            Dual Attention Network for Scene Segmentation论文地址：https://openaccess.thecvf.com/content_CVPR_2019/html/Fu_Dual_Attention
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-09-27
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-27
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/java/" class="post-category">
-                                    java
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">
-                        <span class="chip bg-color">java网络编程</span>
+                    <a href="/tags/%E8%B6%85%E5%88%86%E8%BE%A8%E7%8E%87%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/">
+                        <span class="chip bg-color">超分辨率语义分割</span>
                     </a>
                     
                 </div>
@@ -720,38 +721,31 @@ i
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/09/26/ji-yu-nei-rong-de-tui-jian/">
+                <a href="/2020/11/26/dsrl/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="基于内容的推荐">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="DSRL">
                         
-                        <span class="card-title">基于内容的推荐</span>
+                        <span class="card-title">DSRL</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            基于内容的推荐
-给物品打标签
-系统自己提取，从业务数据库中提取
-用户填写
-中文分词 利用算法计算词的权重
-tf-idf:$\quad tf*idf$
-tf:term frequency词频
-idf:逆文档频率 $log_{10}\frac{
+                            Dual Super-Resolution Learning for Semantic Segmentation论文链接：https://openaccess.thecvf.com/content_CVPR_2020/html/Wang_D
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-09-26
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-11-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%8E%A8%E8%8D%90%E7%B3%BB%E7%BB%9F/" class="post-category">
-                                    推荐系统
+                            <a href="/categories/%E7%AE%97%E6%B3%95/" class="post-category">
+                                    算法
                                 </a>
                             
                             
@@ -761,8 +755,8 @@ idf:逆文档频率 $log_{10}\frac{
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Memory-Based%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95/">
-                        <span class="chip bg-color">Memory-Based推荐算法</span>
+                    <a href="/tags/%E8%B6%85%E5%88%86%E8%BE%A8%E7%8E%87%E8%AF%AD%E4%B9%89%E5%88%86%E5%89%B2/">
+                        <span class="chip bg-color">超分辨率语义分割</span>
                     </a>
                     
                 </div>
